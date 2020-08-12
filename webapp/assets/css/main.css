@@ -23,10 +23,6 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	background-color: #4257B2;
 }
 
-#header {
-	height: 50px;
-}
-
 #footerTop {
 	height: 50px;
 }
@@ -60,14 +56,6 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	height: 50px;
 }
 
-.col {
-	-ms-flex-preferred-size: 0;
-	flex-basis: 0;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-	max-width: 100%;
-}
-
 .nav {
 	display: -ms-flexbox;
 	display: flex;
@@ -76,6 +64,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
+	vertical-align:center;
+    align-items: center;
 }
 
 .nav-item {
@@ -92,6 +82,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 
 #followingHeader {
 	flex: 1 1 5%;
+	border-right:1px solid #FFFFFF;
 }
 
 #newHeader {
@@ -111,7 +102,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #searchHeader {
-	width: 100%
+	border-radius: 20px;
+	width: 95%
 }
 
 @media screen and (max-width: 1024px) {
@@ -122,4 +114,5 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 		display:none;
 	}
 }
+
 /* 헤더 끝 */
