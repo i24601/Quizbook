@@ -22,14 +22,13 @@
 	<!-- header -->
 	
 	
-	
 	<div class="container-fluid">
 	
 		<div class="row">
-				
+			
 			<div class="col-xs-12">
 				<img src="${pageContext.request.contextPath}/assets/images/01.메인.png" alt="mainImage" class="img-responsive center-block"/>
-			</div>
+			</div>	
 	
 		</div>
 	</div>
