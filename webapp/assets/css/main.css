@@ -81,13 +81,18 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 .nav-item {
 	color: #FFFFFF;
 	margin-bottom: -1px;
+	margin-top: 10px;
 	text-align: center;
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 	-ms-flex-preferred-size: 0;
-	/* flex-basis: 0; */
+	flex-basis: 0;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
+}
+
+.searchHeader{
+	width:100%;
 }
 
 /* 헤더 끝 */

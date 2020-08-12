@@ -16,8 +16,8 @@
             <li class="nav-item newHeader">
             	 만들기
             </li>
-            <li class="nav-item searchHeader">
-              <input type="text" placeholder=" 검색">
+            <li class="nav-item">
+              <input type="text" placeholder=" 검색" class="searchHeader">
             </li>
             <li class="nav-item signUpHeader">
             	 회원가입
