@@ -21,7 +21,7 @@
 				</li>
 				<li class="nav-item" id="nav-search">
 					<form action="${pageContext.request.contextPath}/test" method="post">
-						<input type="text" placeholder="검색" id="searchHeader" name="keyword">
+						<input type="text" placeholder="&#xF002; 검색" id="searchHeader" name="keyword">
 					</form>
 				</li>
 				<li class="nav-item" id="signInHeader">
