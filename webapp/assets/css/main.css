@@ -108,7 +108,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #footerBottom {
-	height: 50px;
+	height: 70px;
 }
 
 #divider {
@@ -127,8 +127,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 #footerCopywrite {
 	text-align: right;
 	color: #FFFFFF;
-	font-size: 20px;
-	margin-top:10px;
+	font-size: 25px;
+	margin-top:15px;
 }
 
 /* 푸터 하단고정 */
@@ -143,47 +143,6 @@ body{margin:0}
 
 /* 미디어쿼리*/
 @media screen and (max-width: 1082px) {
-	
-	/* 헤더조절 */
-	/* #followingHeader {
-		display:none;
-	}
-	
-	#newHeader {
-		display:none;
-	}
-	
-	#blankHeader {
-		display:none;
-	}
-	#title {
-		font-size: 20px;
-		flex-basis: 14%;
-	}
-	
-	#nav-search {
-		flex-basis: 40%;
-	}
-	
-	#signUpHeader {
-		flex: 1 1 7%;
-	}
-
-	#signInHeader {
-		flex: 1 1 7%;
-	}
-	
-	#header {
-		height: 50px;
-	}
-	
-	#searchHeader {
-	padding: 5px 5px 5px 10px;
-	}
-	
-	.nav-item {
-	font-size:15px;
-	} */
 	
 	#followingHeader {
 		display:none;
@@ -227,7 +186,7 @@ body{margin:0}
 	
 	/* 푸터조절 */
 	#footerTop {
-		height: 20px;
+		height: 10px;
 	}
 	
 	#footerBottom {
@@ -235,7 +194,7 @@ body{margin:0}
 	}
 	
 	#footerCopywrite {
-		font-size: 13px;
+		font-size: 15px;
 		margin-top:6px;
 	}
 }

@@ -13,7 +13,9 @@
 	</div>
 
 	<div class="row color" id="footerBottom">
-		<div class="col-xs-12" id="footerCopywrite">Quizbook</div>
+	
+		<div class="col-xs-12" id="footerCopywrite">© 2020 Quizbook</div>
+	
 	</div>
 
 </div>
