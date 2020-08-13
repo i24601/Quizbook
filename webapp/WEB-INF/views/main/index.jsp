@@ -21,15 +21,16 @@
 	<c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import>		
 	<!-- header -->
 	
-	
-	<div class="container-fluid">
-	
-		<div class="row">
-			
-			<div class="col-xs-12">
-				<img src="${pageContext.request.contextPath}/assets/images/01.메인.png" alt="mainImage" class="img-responsive center-block"/>
-			</div>	
-	
+	<div id="body">
+		<div class="container-fluid" id="content">
+		
+			<div class="row">
+				
+				<div class="col-xs-12">
+					<img src="${pageContext.request.contextPath}/assets/images/01.메인.png" alt="mainImage" class="img-responsive center-block"/>
+				</div>	
+		
+			</div>
 		</div>
 	</div>
 	
