@@ -3,12 +3,12 @@
 /*폰트 적용*/
 @font-face {
 	font-family: "NotoSansKR-Regular";
-	src: url("fonts/NotoSansKR-Regular.otf");
+	src: url("font/NotoSansKR-Regular.otf");
 }
 
 @font-face {
 	font-family: "NotoSansKR-Bold";
-	src: url("fonts/NotoSansKR-Bold.otf");
+	src: url("font/NotoSansKR-Bold.otf");
 }
 
 /* 여백 초기화 */
@@ -40,22 +40,22 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	color: #FFFFFF;
 	text-align: center;
 	display:inline-block;
+	font-size:20px;
 }
 
 #title {
-	font-family:"NotoSansKR-Bold";
+	font-family:"NotoSansKR-Bold", sans-serif;
 	font-size: 30px;
 	flex: 1 1 11%;
 }
 
-
 #followingHeader {
-	flex: 1 1 5%;
+	flex: 1 1 4%;
 	border-right:1px solid #FFFFFF;
 }
 
 #newHeader {
-	flex: 1 1 5%;
+	flex: 1 1 4%;
 }
 
 #nav-search {
@@ -142,10 +142,10 @@ body{margin:0}
 
 
 /* 미디어쿼리*/
-@media screen and (max-width: 1054px) {
+@media screen and (max-width: 1082px) {
 	
 	/* 헤더조절 */
-	#followingHeader {
+	/* #followingHeader {
 		display:none;
 	}
 	
@@ -166,11 +166,11 @@ body{margin:0}
 	}
 	
 	#signUpHeader {
-		flex: 1 1 8%;
+		flex: 1 1 7%;
 	}
 
 	#signInHeader {
-		flex: 1 1 8%;
+		flex: 1 1 7%;
 	}
 	
 	#header {
@@ -180,6 +180,50 @@ body{margin:0}
 	#searchHeader {
 	padding: 5px 5px 5px 10px;
 	}
+	
+	.nav-item {
+	font-size:15px;
+	} */
+	
+	#followingHeader {
+		display:none;
+	}
+	
+	#newHeader {
+		display:none;
+	}
+	
+	#blankHeader {
+		display:none;
+	}
+	#title {
+		font-size: 20px;
+		flex-basis: 25%;
+	}
+	
+	#nav-search {
+		flex-basis: 40%;
+	}
+	
+	#signUpHeader {
+		flex: 1 1 12.5%;
+	}
+
+	#signInHeader {
+		flex: 1 1 12.5%;
+	}
+	
+	#header {
+		height: 50px;
+	}
+	
+	#searchHeader {
+	padding: 5px 5px 5px 10px;
+	}
+	
+	.nav-item {
+	font-size:15px;
+	} 
 	
 	/* 푸터조절 */
 	#footerTop {
