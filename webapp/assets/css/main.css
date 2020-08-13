@@ -80,12 +80,12 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #followingHeader {
-	flex: 1 1 7%;
+	flex: 1 1 5%;
 	border-right:1px solid #FFFFFF;
 }
 
 #newHeader {
-	flex: 1 1 7%;
+	flex: 1 1 5%;
 }
 
 #nav-search {
@@ -111,9 +111,17 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	outline:0;
 }
 
-#q-logoHeader {
+#aLinkHeader {
 	text-decoration:none;
 	color:#FFFFFF;
+}
+
+#aLinkHeader:hover {
+	background-color: #4257B2;
+}
+
+#blankHeader {
+	flex: 1 1 4%;
 }
 
 @media screen and (max-width: 1015px) {

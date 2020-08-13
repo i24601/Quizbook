@@ -8,8 +8,13 @@
 
           <ul class="nav" id="header">
             <li class="nav-item" id="title">
-            	<a id="q-logoHeader">QUIZBOOK</a>
+            	<a id="aLinkHeader" href="http://localhost:8088/Quizbook/">QUIZBOOK</a>
             </li>
+            
+            <li class="nav-item" id="blankHeader">
+            </li>
+            
+            
             <li class="nav-item" id="followingHeader">
             	 <button class="btn-header">팔로잉</button>
             </li>
