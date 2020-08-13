@@ -33,6 +33,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	list-style: none;
     align-items: center;
     text-align:center;
+    font-family: "NotoSansKR-Regular";
 }
 
 .nav-item {
@@ -42,6 +43,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #title {
+	font-family:"NotoSansKR-Bold";
 	font-size: 20px;
 	flex: 1 1 14%;
 }
@@ -158,12 +160,16 @@ body{margin:0}
 	}
 	
 	#title {
-	flex: 1 1 22%;
+	flex-basis: 22%;
 	}
 	
 	#nav-search {
-	flex: 1 1 38%;
+	flex-basis: 38%;
 	}
+	
+	#nav-search {
+	flex-basis: 40%;
+}
 	
 	#header {
 	height: 50px;
@@ -179,8 +185,6 @@ body{margin:0}
 	}
 	
 	#footerCopywrite {
-		text-align: right;
-		color: #FFFFFF;
 		font-size: 13px;
 		margin-top:6px;
 	}
