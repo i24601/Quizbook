@@ -20,10 +20,8 @@
 </head>
 <body>
 
-	<%-- <c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import> --%>
+	<c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import>
 	<!-- 반응형 -->
-	<c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
-	<!-- 고정 -->		
 	<!-- header -->
 	
 	<div id="body">
@@ -39,8 +37,10 @@
 		</div>
 	</div>
 	
-	
-	<c:import url="/WEB-INF/views/includes/main-footer.jsp"></c:import>		
+	<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
+	<!-- 고정 -->	
+	<c:import url="/WEB-INF/views/includes/main-footer.jsp"></c:import>
+	<!-- 반응형 -->		
 	
 	
 	

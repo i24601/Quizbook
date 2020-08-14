@@ -17,8 +17,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	margin: 0;
 	padding: 0;
 }
-/* 
-헤더
+
+/* 헤더 */
 #header {
 	height: 70px;
 }
@@ -96,10 +96,10 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	background-color: #4257B2;
 }
 
-헤더 끝
+/* 헤더 끝 */
 
 
-footer
+/* footer */
 
 .color {
 	background-color: #4257B2;
@@ -131,19 +131,20 @@ footer
 	color: #FFFFFF;
 	font-size: 25px;
 	margin-top:15px;
+	font-family: "NotoSansKR-Regular";
 }
 
-푸터 하단고정
+/* 푸터 하단고정 */
 html,body{height:100%}
 body{margin:0}
 #body{min-height:100%}
 #content{padding-bottom:1.9em}
 #footer{margin-top:-1.9em;}
 
-footer 끝
+/* footer 끝 */
 
 
-미디어쿼리
+/* 미디어쿼리 */
 @media screen and (max-width: 1082px) {
 	
 	#followingHeader {
@@ -199,21 +200,63 @@ footer 끝
 		font-size: 15px;
 		margin-top:6px;
 	}
-} */
+}
 
 /* !--반응형 헤더 푸터 */
 
-.group_flex {
+
+/* 고정형  푸터*/
+.special_bg {
     position: relative;
-    width: 1130px;
+    height: 35px;
+    background-color: #FFFFFF;
+}
+
+.footer_flex {
+	background-color: #4257B2;
+    position: relative;
+    width: 1400px;
     height: 100%;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-.special_bg {
-    position: relative;
-    height: 160px;
-    background-color: #fff;
-    border-bottom: 1px solid #e4e8eb;
+
+ul.list_footer{
+	display: flex;
+	flex-wrap: wrap;
+	height:100%;
+    align-items: center;
+	
+	
+	list-style: none;
+    text-align:center;
+    font-family: "NotoSansKR-Regular";
 }
+
+li.footer_item{
+	color: #FFFFFF;
+	text-align: center;
+	display:inline-block;
+	font-size:20px;
+}
+
+.footer_item>a {
+	padding:0px 10px;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+#copywrite_footer_flex {
+	margin-left:200px;
+}
+
+#footerTop-flex {
+	
+	margin: 0 auto;
+    padding: 0 30px;
+	width: 1400px;
+	height: 15px;
+}
+
+
