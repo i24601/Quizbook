@@ -17,8 +17,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	margin: 0;
 	padding: 0;
 }
-
-/* 헤더 */
+/* 
+헤더
 #header {
 	height: 70px;
 }
@@ -96,10 +96,10 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	background-color: #4257B2;
 }
 
-/* 헤더 끝 */
+헤더 끝
 
 
-/* footer */
+footer
 
 .color {
 	background-color: #4257B2;
@@ -133,17 +133,17 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	margin-top:15px;
 }
 
-/* 푸터 하단고정 */
+푸터 하단고정
 html,body{height:100%}
 body{margin:0}
 #body{min-height:100%}
 #content{padding-bottom:1.9em}
 #footer{margin-top:-1.9em;}
 
-/* footer 끝 */
+footer 끝
 
 
-/* 미디어쿼리*/
+미디어쿼리
 @media screen and (max-width: 1082px) {
 	
 	#followingHeader {
@@ -186,7 +186,7 @@ body{margin:0}
 	font-size:15px;
 	} 
 	
-	/* 푸터조절 */
+	푸터조절
 	#footerTop {
 		height: 10px;
 	}
@@ -199,4 +199,21 @@ body{margin:0}
 		font-size: 15px;
 		margin-top:6px;
 	}
+} */
+
+/* !--반응형 헤더 푸터 */
+
+.group_flex {
+    position: relative;
+    width: 1130px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.special_bg {
+    position: relative;
+    height: 160px;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e8eb;
 }
