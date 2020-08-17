@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+
+/*폰트 적용*/
+@font-face {
+	font-family: "NotoSansKR-Regular";
+	src: url("/Quizbook/assets/fonts/nanoSansKr/NotoSansKR-Regular.otf");
+}
+
+@font-face {
+	font-family: "NotoSansKR-Bold";
+	src: url("/Quizbook/assets/fonts/nanoSansKr/NotoSansKR-Bold.otf");
+}
+
+/* 여백 초기화 */
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
+	legend, p, select, table, th, td, tr, textarea, button, form {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* 고정형  푸터*/
+
+#footer_Top {
+	background-color: #4257B2;
+	margin: 0 auto;
+    padding: 0 30px;
+	width: 1400px;
+	height: 15px;
+}
+
+#divider {
+	background-color: #f6f7fb;
+	border: none;
+	height: 2px;
+	margin: 0;
+	opacity: .2;
+}
+
+.footer_bg {
+    position: relative;
+    height: 35px;
+    background-color: #FFFFFF;
+}
+
+.footer {
+	background-color: #4257B2;
+    position: relative;
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+ul.footer_list{
+	display: flex;
+	flex-wrap: wrap;
+	height:100%;
+    align-items: center;
+	
+	
+	list-style: none;
+    text-align:center;
+    font-family: "NotoSansKR-Regular";
+}
+
+li.footer_item{
+	color: #FFFFFF;
+	text-align: center;
+	display:inline-block;
+	font-size:20px;
+}
+
+.footer_item>a {
+	padding:0px 10px;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+#footer_item_copywrite {
+	margin-left:100px;
+}
+
+
+
+
+/* 푸터 하단고정 */
+html,body{height:100%}
+body{margin:0}
+#body{min-height:100%}
+#content{padding-bottom:1.9em}
+#footer{margin-top:-1.9em;}
+
+/* footer 끝 */

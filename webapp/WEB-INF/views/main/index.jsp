@@ -13,7 +13,7 @@
 <title>Main</title>
 <link
 	href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/include/r_hnf.css" rel="stylesheet" type="text/css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 
@@ -37,8 +37,6 @@
 		</div>
 	</div>
 	
-	<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
-	<!-- 고정 -->	
 	<c:import url="/WEB-INF/views/includes/main-footer.jsp"></c:import>
 	<!-- 반응형 -->		
 	
