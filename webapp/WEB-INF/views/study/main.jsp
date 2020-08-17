@@ -50,6 +50,7 @@
 			</div>
 
 			<div id="study_main_right">오른쪽</div>
+			
 		</div>
 	</div>
 
@@ -67,10 +68,10 @@
 	function flip(event) {
 		var element = event.currentTarget;
 		if (element.className === "card") {
-			if (element.style.transform == "rotateY(180deg)") {
-				element.style.transform = "rotateY(0deg)";
+			if (element.style.transform == "rotateX(180deg)") {
+				element.style.transform = "rotateX(0deg)";
 			} else {
-				element.style.transform = "rotateY(180deg)";
+				element.style.transform = "rotateX(180deg)";
 			}
 		}
 	};
