@@ -37,10 +37,11 @@
 			<div id="study_main_left">왼쪽</div>
 
 			<div id="study_main_center">
-
-
+			<div>삼국시대</div>
+			
+				<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
 				<div class="card_wrap">
-					<div class="card" onclick="flip(event)">
+					<div class="card" id="card">
 						<div class="front">front</div>
 						<div class="back">back</div>
 					</div>
@@ -50,7 +51,6 @@
 			</div>
 
 			<div id="study_main_right">오른쪽</div>
-			
 		</div>
 	</div>
 
@@ -65,6 +65,23 @@
 </body>
 
 <script type="text/javascript">
+$(".card").on('click',function(){
+	
+	var element = document.getElementById('card');
+	
+	if (element.className === "card") {
+		if (element.style.transform == "rotateX(180deg)") {
+			element.style.transform = "rotateX(0deg)";
+		} else {
+			element.style.transform = "rotateX(180deg)";
+		}
+	}
+	
+	});
+</script>
+
+<!-- id 안쓰고 class="card" 뒤에 onclick="flip(event) 쓸 경우 
+<script type="text/javascript">
 	function flip(event) {
 		var element = event.currentTarget;
 		if (element.className === "card") {
@@ -75,5 +92,5 @@
 			}
 		}
 	};
-</script>
+</script> -->
 </html>

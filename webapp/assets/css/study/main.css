@@ -1,14 +1,23 @@
 @charset "UTF-8";
 
+/* 여백 초기화 */
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
+	legend, p, select, table, th, td, tr, textarea, button, form {
+	margin: 0;
+	padding: 0;
+}
+
 #body {
     position: relative;
     width: 1400px;
+    height:700px;
     margin: 0 auto;
+    margin-top:100px;
 }
  
 #study_main {
 	width: 100%;
-	height: 555px;
+	height: 600px;
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
@@ -18,24 +27,33 @@
 	width: 210px;
 	margin-left:55px;	
 	float: left;
-	background-color: #FF0000;
+	border: 2px solid black;	
 }
 
 #study_main_center {
 	width: 585px;
 	margin-left:85px;		
 	float: left;
-	background-color: #00FF00;
 }
 
 #study_main_right {
 	width: 200px;
 	margin-left:30px;
 	float: left;
-	background-color: #0000FF;
+	border: 2px solid black;	
 }
 
-div {
+div.card_wrap {
+	width: 100%;
+	height: 555px;
+}
+
+div.card {
+	width: 100%;
+	height: 100%;
+}
+
+.front, .back {
 	width: 100%;
 	height: 100%;
 }
