@@ -34,23 +34,55 @@
 
 	<div id="body">
 		<div id="study_main">
-			<div id="study_main_left">왼쪽</div>
 
-			<div id="study_main_center">
-			<div>삼국시대</div>
-			
+			<div id="study_nav">nav</div>
+
+			<div id="study_wrap">
+
+
 				<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
+
 				<div class="card_wrap">
+
+					<div id="study_title">삼국시대 - 고구려</div>
+
 					<div class="card" id="card">
 						<div class="front">front</div>
 						<div class="back">back</div>
 					</div>
+
+					<div class="CardsList-navControl previousButton">
+						<span><button disabled="" title="이전 카드" type="button">
+								<span>◀</span>
+							</button></span>
+					</div>
+
+
+					<div class="CardsList-navControl progressIndex">
+						<span>1/130</span>
+					</div>
+
+					<div class="CardsList-navControl nextButton">
+						<span><button title="다음 카드" type="button">
+								<span>▶</span>
+							</button></span>
+					</div>
+
+
 				</div>
 
+				<div id="study_user">
+					<ul>
+						<li><a class="job" href="#">직업</a></li>
+						<li><a href="#">패스파인더</a></li>
+						<li><a href="#">아델</a></li>
+						<li><a href="#">호영</a></li>
+						<li><a href="#">히어로</a></li>
+					</ul>
+				</div>
 
 			</div>
 
-			<div id="study_main_right">오른쪽</div>
 		</div>
 	</div>
 
@@ -65,18 +97,18 @@
 </body>
 
 <script type="text/javascript">
-$(".card").on('click',function(){
-	
-	var element = document.getElementById('card');
-	
-	if (element.className === "card") {
-		if (element.style.transform == "rotateX(180deg)") {
-			element.style.transform = "rotateX(0deg)";
-		} else {
-			element.style.transform = "rotateX(180deg)";
+	$(".card").on('click', function() {
+
+		var element = document.getElementById('card');
+
+		if (element.className === "card") {
+			if (element.style.transform == "rotateX(180deg)") {
+				element.style.transform = "rotateX(0deg)";
+			} else {
+				element.style.transform = "rotateX(180deg)";
+			}
 		}
-	}
-	
+
 	});
 </script>
 

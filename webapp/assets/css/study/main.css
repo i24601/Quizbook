@@ -12,45 +12,49 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
     width: 1400px;
     height:700px;
     margin: 0 auto;
-    margin-top:100px;
-}
- 
-#study_main {
-	width: 100%;
-	height: 600px;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
 }
 
-#study_main_left {
+#study_nav {
 	width: 210px;
+	height:600px;
 	margin-left:55px;	
 	float: left;
 	border: 2px solid black;	
 }
 
-#study_main_center {
-	width: 585px;
-	margin-left:85px;		
+#study_wrap {
+	width: 805px;
+	/* height:600px; */
+	height:550px;
+	margin-left:85px;
 	float: left;
+	border-bottom: 2px solid black;		
 }
 
-#study_main_right {
-	width: 200px;
-	margin-left:30px;
+#study_title {
+	height:70px;
+	width:100%;
+	border: 2px solid black;
+	font-size:25px;	
+}
+
+#study_user {
+	width: 195px;
+	height: 400px;
+	margin-left:30px;		
 	float: left;
 	border: 2px solid black;	
 }
 
 div.card_wrap {
-	width: 100%;
-	height: 555px;
+	width: 580px;
+	height: 500px;
+	float:left;
 }
 
 div.card {
 	width: 100%;
-	height: 100%;
+	height: 350px;
 }
 
 .front, .back {
@@ -86,4 +90,24 @@ div.card {
 .back {
 	border: 2px solid black;
 	transform: rotateX(180deg);
+}
+
+.CardsList-navControl{
+	bottom:0;
+	position: absolute;
+}
+
+.previousButton {
+	left:33%;
+}
+
+.nextButton {
+	right:33%;
+}
+
+.progressIndex{
+	left:0;
+	right:0;
+    margin: auto;
+    text-align: center;
 }
