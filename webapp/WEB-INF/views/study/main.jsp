@@ -98,64 +98,98 @@
 </body>
 
 <script type="text/javascript">
-    
-    
-	$(".card").on('click', function() {
-		
-		console.log($('.card').css('transform'));
 
-		//1. 만약 애니메이션이 여러개 있어서 복잡하게 되면 메소드를 하나 만드는게 낫다 (split)
-		//2. now가 deg를 나타내므로 now를 if 조건문에 사용할수도..
-		//3. 세세하게 조절해야할 경우 아래처럼 matrix 비교
-		//주의 따로 변수 선언해서 front back if 조건으로 주면 다 뒤집히지 않았을때 문제 time out같은걸
-		
-		if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
-			$('.card').animate({
-				deg : 180
-			}, {
-				duration : 500,
-				step : function(now) {
-					console.log(now);
-					$(".card").css({
-						transform : 'rotateX(' + now + 'deg)'
+	
+	$(".card")
+			.on(
+					'click',
+					function() {
+
+						console.log($('.card').css('transform'));
+
+						//1. 만약 애니메이션이 여러개 있어서 복잡하게 되면 메소드를 하나 만드는게 낫다 (split)
+						//2. now가 deg를 나타내므로 now를 if 조건문에 사용할수도..
+						//3. 세세하게 조절해야할 경우 아래처럼 matrix 비교
+						//주의 따로 변수 선언해서 front back if 조건으로 주면 다 뒤집히지 않았을때 문제 time out같은걸
+
+						/* if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
+							$('.card').animate({
+								deg : 180
+							}, {
+								duration : 500,
+								step : function(now) {
+									console.log(now);
+									$(".card").css({
+										transform : 'rotateX(' + now + 'deg)'
+									});
+								}
+							});
+							
+						}
+
+						else {
+							$('.card').animate({
+								deg : 0
+							}, {
+								duration : 500,
+								step : function(now) {
+									console.log(now);
+
+									$(".card").css({
+										transform : 'rotateX(' + now + 'deg)'
+									});
+								}
+							});
+						} */
+						
+						//프론트
+						if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
+							$('.card').animate({
+								deg : 180
+							}, {
+								duration : 500,
+								step : function(now) {
+									console.log(now);
+									
+									$(".card").removeClass("f_state");
+									$(".card").addClass("b_state");
+								}
+							});
+							
+						}
+						
+						//백
+						else {
+							$('.card').animate({
+								deg : 0
+							}, {
+								duration : 500,
+								step : function(now) {
+									console.log(now);
+									
+									$(".card").removeClass("b_state");
+									$(".card").addClass("f_state");
+									
+								}
+							});
+						}
+
 					});
-				}
-			});
-		}
-		
-		else {
-			$('.card').animate({
-				deg : 0
-			}, {
-				duration : 500,
-				step : function(now) {
-					console.log(now);
-
-					      $(".card").css({transform : 'rotateX(' + now + 'deg)'});
-				}
-			});
-		}
-
-	});
 
 	$(".nextButton").on('click', function() {
-		
-		//안보이게
 		console.log("버튼클릭");
-		if (($('.card').css('transform')) == 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
-			$('.card').animate({
-				deg : 0
-			}, {
-				duration : 500,
-				step : function(now) {
-					console.log(now);
-					$(".card").css({
-						transform : 'Ease-out'
-					});
-				}
-			});
-		}
-
+		
+		
+		/* $(".card").addClass('previous').delay(1000).queue(function(next){
+			$(".card").css('transform','');
+		}); */
+		
+		$(".card").removeClass('b_state');
+		$(".card").removeClass('f_state');
+		
+		$(".card").addClass('previous');
+		//$(".card").css('transform','');
+		
 	});
 </script>
 
