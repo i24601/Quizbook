@@ -73,7 +73,7 @@
 
 				<div id="study_user">
 					<div>크롱</div>
-					
+
 					<ul id="study_user_nav">
 						<li><a href="#">&#xf00c 학습하기</a></li>
 						<li><a href="#">&#xF24d 낱말 카드</a></li>
@@ -98,36 +98,65 @@
 </body>
 
 <script type="text/javascript">
+    
+    
 	$(".card").on('click', function() {
-
-		var element = document.getElementById('card');
 		
-		
-		if (element.className === "card") {
-			//뒤집힌 상태라면
-			if (element.style.transform == "rotateX(180deg)") {
-				//으로 회전시키고
-				element.style.transform = "rotateX(0deg)";
-				//뒤집힌게 아니면 뒤집어라
-			} else {
-				element.style.transform = "rotateX(180deg)";
-			}
-		} 
+		console.log($('.card').css('transform'));
 
-	});
-	
-	$(".nextButton").on('click', function() {
-		var element = document.getElementById('card');
-		if (element.style.transform == "rotateX(180deg)") {
-			element.style.transform = "rotateX(0deg)";
+		//1. 만약 애니메이션이 여러개 있어서 복잡하게 되면 메소드를 하나 만드는게 낫다 (split)
+		//2. now가 deg를 나타내므로 now를 if 조건문에 사용할수도..
+		//3. 세세하게 조절해야할 경우 아래처럼 matrix 비교
+		//주의 따로 변수 선언해서 front back if 조건으로 주면 다 뒤집히지 않았을때 문제 time out같은걸
+		
+		if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
+			$('.card').animate({
+				deg : 180
+			}, {
+				duration : 500,
+				step : function(now) {
+					console.log(now);
+					$(".card").css({
+						transform : 'rotateX(' + now + 'deg)'
+					});
+				}
+			});
 		}
-		console.log("버튼클릭")
-		$(".front").text("front_next");
-		$(".back").text("back_next");
-		$("#index").text("2/50");
 		
+		else {
+			$('.card').animate({
+				deg : 0
+			}, {
+				duration : 500,
+				step : function(now) {
+					console.log(now);
+
+					      $(".card").css({transform : 'rotateX(' + now + 'deg)'});
+				}
+			});
+		}
+
 	});
-	
+
+	$(".nextButton").on('click', function() {
+		
+		//안보이게
+		console.log("버튼클릭");
+		if (($('.card').css('transform')) == 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
+			$('.card').animate({
+				deg : 0
+			}, {
+				duration : 500,
+				step : function(now) {
+					console.log(now);
+					$(".card").css({
+						transform : 'Ease-out'
+					});
+				}
+			});
+		}
+
+	});
 </script>
 
 <!-- id 안쓰고 class="card" 뒤에 onclick="flip(event) 쓸 경우 
