@@ -8,48 +8,51 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #body {
-    position: relative;
-    width: 1400px;
-    height:700px;
-    margin: 0 auto;
+	position: relative;
+	width: 1400px;
+	height: 700px;
+	margin: 0 auto;
 }
 
 #study_nav {
 	width: 210px;
-	height:600px;
-	margin-left:55px;	
+	height: 600px;
+	margin-left: 55px;
 	float: left;
-	border: 2px solid black;	
+	border: 2px solid black;
+	margin-left: 55px;
 }
 
 #study_wrap {
 	width: 805px;
 	/* height:600px; */
-	height:550px;
-	margin-left:85px;
+	height: 550px;
+	margin-left: 85px;
 	float: left;
-	border-bottom: 2px solid black;		
+	border-bottom: 2px solid black;
+	float: left;
+	margin-left: 85px;
 }
 
 #study_title {
-	height:70px;
-	width:100%;
+	height: 70px;
+	width: 100%;
 	border: 2px solid black;
-	font-size:25px;	
+	font-size: 25px;
 }
 
 #study_user {
 	width: 195px;
 	height: 400px;
-	margin-left:30px;		
+	margin-left: 30px;
 	float: left;
-	border: 2px solid black;	
+	border: 2px solid black;
 }
 
 div.card_wrap {
 	width: 580px;
 	height: 500px;
-	float:left;
+	float: left;
 }
 
 div.card {
@@ -80,8 +83,8 @@ div.card {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	backface-visibility: hidden;
-}
+ 	backface-visibility: hidden;
+ }
 
 .front {
 	border: 2px solid black;
@@ -92,22 +95,51 @@ div.card {
 	transform: rotateX(180deg);
 }
 
-.CardsList-navControl{
-	bottom:0;
+.CardsList-navControl {
+	bottom: 0;
 	position: absolute;
 }
 
 .previousButton {
-	left:33%;
+	left: 33%;
 }
 
 .nextButton {
-	right:33%;
+	right: 33%;
 }
 
-.progressIndex{
-	left:0;
-	right:0;
-    margin: auto;
-    text-align: center;
+.progressIndex {
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
 }
+
+#study_user_nav {
+	list-style-type: none;
+	font-size:20px;
+	width:80%;
+	margin-left: 10%;
+}
+
+#study_user_nav>li {
+	height:35px;
+	text-decoration: none;
+	padding: 8px 15px 8px 15px;
+	font-weight: bold;
+}
+
+#study_user_nav>li>a{
+	color:#000000;
+	opacity: .8;
+	text-decoration:none;	
+}
+
+#study_user_nav>li>a:hover {
+	border-bottom : 2px solid #ff9900;
+}
+
+#study_user_nav{
+	font-family : "Arial", FontAwesome;	
+}
+	

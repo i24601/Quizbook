@@ -59,7 +59,7 @@
 
 
 					<div class="CardsList-navControl progressIndex">
-						<span>1/130</span>
+						<span id="index">1/50</span>
 					</div>
 
 					<div class="CardsList-navControl nextButton">
@@ -72,12 +72,13 @@
 				</div>
 
 				<div id="study_user">
-					<ul>
-						<li><a class="job" href="#">직업</a></li>
-						<li><a href="#">패스파인더</a></li>
-						<li><a href="#">아델</a></li>
-						<li><a href="#">호영</a></li>
-						<li><a href="#">히어로</a></li>
+					<div>크롱</div>
+					
+					<ul id="study_user_nav">
+						<li><a href="#">&#xf00c 학습하기</a></li>
+						<li><a href="#">&#xF24d 낱말 카드</a></li>
+						<li><a href="#">&#xf044 테스트</a></li>
+						<li><a href="#">&#xf11b 게임</a></li>
 					</ul>
 				</div>
 
@@ -100,16 +101,33 @@
 	$(".card").on('click', function() {
 
 		var element = document.getElementById('card');
-
+		
+		
 		if (element.className === "card") {
+			//뒤집힌 상태라면
 			if (element.style.transform == "rotateX(180deg)") {
+				//으로 회전시키고
 				element.style.transform = "rotateX(0deg)";
+				//뒤집힌게 아니면 뒤집어라
 			} else {
 				element.style.transform = "rotateX(180deg)";
 			}
-		}
+		} 
 
 	});
+	
+	$(".nextButton").on('click', function() {
+		var element = document.getElementById('card');
+		if (element.style.transform == "rotateX(180deg)") {
+			element.style.transform = "rotateX(0deg)";
+		}
+		console.log("버튼클릭")
+		$(".front").text("front_next");
+		$(".back").text("back_next");
+		$("#index").text("2/50");
+		
+	});
+	
 </script>
 
 <!-- id 안쓰고 class="card" 뒤에 onclick="flip(event) 쓸 경우 
