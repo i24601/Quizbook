@@ -94,11 +94,11 @@
 					</div>
 					<div id="follow_wrapper">
 						<div>
-							<span><a>팔로잉</a></span>
+							<span><a href="#">팔로잉</a></span>
 							<span>|</span>
-							<span><a>팔로워</a></span>
+							<span><a href="#">팔로워</a></span>
 						</div>
-						<div id="heart" class="fontAwsome">&#xf004</div>
+						<div class="fontAwsome" id="heart"><a href="#" id="aHeart">&#xf004</a></div>
 					</div>
 					<ul id="study_user_nav" class="fontAwsome">
 						<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
