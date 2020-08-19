@@ -33,24 +33,32 @@
 <body>
 
 	<div id="body">
-		<div id="study_main">
-
-			<div id="study_nav">nav</div>
-
-			<div id="study_wrap">
 
 
-				<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
+		<div id="study_nav">nav 넣을자리</div>
 
+		<!-- study_area, study_user, bottom line을 위한 wrap  -->
+		<div id="study_wrap">
+
+			<!-- 세트 제목, 카드, 버튼 -->
+			<div class="study_area">
+
+				<!-- 제목 -->
+				<div id="study_title">제목 넣을자리</div>
+				<!-- 제목 -->
+
+				<!-- 카드 -->
 				<div class="card_wrap">
-
-					<div id="study_title">삼국시대 - 고구려</div>
-
+					<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
 					<div class="card" id="card">
 						<div class="front">front</div>
 						<div class="back">back</div>
 					</div>
+				</div>
+				<!-- 카드 -->
 
+				<!-- 버튼-->
+				<div>
 					<div class="CardsList-navControl previousButton">
 						<span><button disabled="" title="이전 카드" type="button">
 								<span>◀</span>
@@ -67,24 +75,28 @@
 								<span>▶</span>
 							</button></span>
 					</div>
-
-
 				</div>
+				<!-- 버튼 -->
 
-				<div id="study_user">
-					<div>크롱</div>
+			</div>
+			<!-- study_area 끝  -->
 
-					<ul id="study_user_nav">
-						<li><a href="#">&#xf00c 학습하기</a></li>
-						<li><a href="#">&#xF24d 낱말 카드</a></li>
-						<li><a href="#">&#xf044 테스트</a></li>
-						<li><a href="#">&#xf11b 게임</a></li>
-					</ul>
-				</div>
 
+			<div id="study_user">
+				<div>크롱</div>
+
+				<ul id="study_user_nav">
+					<li><a href="#">&#xf00c 학습하기</a></li>
+					<li><a href="#">&#xF24d 낱말 카드</a></li>
+					<li><a href="#">&#xf044 테스트</a></li>
+					<li><a href="#">&#xf11b 게임</a></li>
+				</ul>
 			</div>
 
 		</div>
+		<!-- study_area, study_user, bottom line을 위한 wrap 끝 -->
+
+
 	</div>
 
 
@@ -98,8 +110,8 @@
 </body>
 
 <script type="text/javascript">
+	var card_front = true;
 
-	
 	$(".card")
 			.on(
 					'click',
@@ -112,37 +124,6 @@
 						//3. 세세하게 조절해야할 경우 아래처럼 matrix 비교
 						//주의 따로 변수 선언해서 front back if 조건으로 주면 다 뒤집히지 않았을때 문제 time out같은걸
 
-						/* if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
-							$('.card').animate({
-								deg : 180
-							}, {
-								duration : 500,
-								step : function(now) {
-									console.log(now);
-									$(".card").css({
-										transform : 'rotateX(' + now + 'deg)'
-									});
-								}
-							});
-							
-						}
-
-						else {
-							$('.card').animate({
-								deg : 0
-							}, {
-								duration : 500,
-								step : function(now) {
-									console.log(now);
-
-									$(".card").css({
-										transform : 'rotateX(' + now + 'deg)'
-									});
-								}
-							});
-						} */
-						
-						//프론트
 						if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
 							$('.card').animate({
 								deg : 180
@@ -150,15 +131,14 @@
 								duration : 500,
 								step : function(now) {
 									console.log(now);
-									
-									$(".card").removeClass("f_state");
-									$(".card").addClass("b_state");
+									$(".card").css({
+										transform : 'rotateX(' + now + 'deg)'
+									});
 								}
 							});
-							
+							card_front = false;
 						}
-						
-						//백
+
 						else {
 							$('.card').animate({
 								deg : 0
@@ -166,30 +146,34 @@
 								duration : 500,
 								step : function(now) {
 									console.log(now);
-									
-									$(".card").removeClass("b_state");
-									$(".card").addClass("f_state");
-									
+
+									$(".card").css({
+										transform : 'rotateX(' + now + 'deg)'
+									});
 								}
 							});
-						}
+							card_front = true;
 
+						}
 					});
 
 	$(".nextButton").on('click', function() {
 		console.log("버튼클릭");
+		console.log(card_front);
 		
-		
-		/* $(".card").addClass('previous').delay(1000).queue(function(next){
-			$(".card").css('transform','');
-		}); */
-		
-		$(".card").removeClass('b_state');
-		$(".card").removeClass('f_state');
-		
-		$(".card").addClass('previous');
-		//$(".card").css('transform','');
-		
+		if (card_front == true) {
+			$(".card").css('transform', '').queue(function() {
+				$(".card").addClass('previous');
+			});
+		}
+		//back일때
+		//elment에 transform요소를 중복해서 쓸수 없으므로(rotate, translate) card를 싸는 card_wrap을 만들어 각각 적용 card(rotate), card_wrap(translate)
+		else {
+			$(".card_wrap").addClass('previous').delay(900).queue(function(){
+				$(".card_wrap").removeClass('previous').dequeue();
+			});
+		}
+
 	});
 </script>
 

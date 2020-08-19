@@ -25,7 +25,6 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 
 #study_wrap {
 	width: 805px;
-	/* height:600px; */
 	height: 550px;
 	margin-left: 85px;
 	float: left;
@@ -49,51 +48,6 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	border: 2px solid black;
 }
 
-div.card_wrap {
-	width: 580px;
-	height: 500px;
-	float: left;
-}
-
-div.card {
-	width: 100%;
-	height: 350px;
-}
-
-.front, .back {
-	width: 100%;
-	height: 350px;
-	/* height: 100%로 할 경우 애니메이션 동작시 card height의 100%가 아니라 card_wrap의 height의 100%가 되므로 문제생김 */
-}
-
-.card_wrap {
-	width: 100%;
-	height: 100%;
-	perspective: 1000px;
-}
-
-.card {
-	transform-style: preserve-3d;
-	cursor: pointer;
-}
-
-.front, .back {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
- 	backface-visibility: hidden;
- }
-
-.front {
-	border: 2px solid black;
-}
-
-.back {
-	border: 2px solid black;
-	transform: rotateX(180deg);
-}
 
 .CardsList-navControl {
 	bottom: 0;
@@ -117,47 +71,82 @@ div.card {
 
 #study_user_nav {
 	list-style-type: none;
-	font-size:20px;
-	width:80%;
+	font-size: 20px;
+	width: 80%;
 	margin-left: 10%;
 }
 
 #study_user_nav>li {
-	height:35px;
+	height: 35px;
 	text-decoration: none;
 	padding: 8px 15px 8px 15px;
 	font-weight: bold;
 }
 
-#study_user_nav>li>a{
-	color:#000000;
+#study_user_nav>li>a {
+	color: #000000;
 	opacity: .8;
-	text-decoration:none;	
+	text-decoration: none;
 }
 
 #study_user_nav>li>a:hover {
-	border-bottom : 2px solid #ff9900;
+	border-bottom: 2px solid #ff9900;
 }
 
-#study_user_nav{
-	font-family : "Arial", FontAwesome;	
+#study_user_nav {
+	font-family: "Arial", FontAwesome;
+}
+/* 애니메이션 시작 */
+div.card_wrap {
+	width: 100%;
+	height: 350px;
+	float: left;
+	
+}
+
+div.study_area {
+	width: 580px;
+	height: 500px;
+	float: left;
+	position: relative;
+}
+
+div.card {
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	/* position: relative 까지 포함됨 */
+	perspective: 1000px;	
+}
+
+.front, .back {
+	width: 100%;
+	height: 100%;
+	border: 2px solid black;
+	
+	/* position: relative가 조상에 있어야함 */
+	/* 최종위치  */	
+	position: absolute;
+	
+	/* 애니메이션 */
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	backface-visibility: hidden;
+}
+
+.back {
+	transform: rotateX(180deg);
 }
 
 .previous {
 	transition: opacity, transform;
 	transition-duration: 1s;
-	opacity : 0;
-	transform: rotateX(0deg), translateX(-15%);
+	opacity: 0;
+	transform: translateX(-15%);
 }
 
-.f_state {
-	transition: transform;
-	transition-duration: 1s;
-	transform: rotateX(0deg);
-}
-
-.b_state {
-	transition: transform;
-	transition-duration: 1s;
-	transform: rotateX(180deg);
-}
+/* 애니메이션 끝 */
