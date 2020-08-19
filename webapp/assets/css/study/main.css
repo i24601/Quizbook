@@ -5,6 +5,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	legend, p, select, table, th, td, tr, textarea, button, form {
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
 }
 
 #body {
@@ -15,6 +16,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_nav {
+	margin-top:50px;
 	width: 210px;
 	height: 600px;
 	margin-left: 55px;
@@ -24,6 +26,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_wrap {
+	margin-top:50px;
 	width: 805px;
 	height: 550px;
 	margin-left: 85px;
@@ -36,16 +39,12 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 #study_title {
 	height: 70px;
 	width: 100%;
-	border: 2px solid black;
 	font-size: 25px;
 }
 
 #study_user {
-	width: 195px;
-	height: 400px;
-	margin-left: 30px;
-	float: left;
-	border: 2px solid black;
+	height:400px;
+	box-shadow: 0px 0px 4px #adffff;
 }
 
 
@@ -70,10 +69,10 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_user_nav {
-	list-style-type: none;
 	font-size: 20px;
 	width: 80%;
 	margin-left: 10%;
+	clear:both;
 }
 
 #study_user_nav>li {
@@ -93,7 +92,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	border-bottom: 2px solid #ff9900;
 }
 
-#study_user_nav {
+.fontAwsome {
 	font-family: "Arial", FontAwesome;
 }
 /* 애니메이션 시작 */
@@ -123,7 +122,8 @@ div.card {
 .front, .back {
 	width: 100%;
 	height: 100%;
-	border: 2px solid black;
+	border: 1px solid gray;
+	border-radius: 10px;
 	
 	/* position: relative가 조상에 있어야함 */
 	/* 최종위치  */	
@@ -157,3 +157,66 @@ div.card {
 }
 
 /* 애니메이션 끝 */
+
+#study_user_nav>li>a>span {
+	color:#00CCFF;
+}
+#user_data {
+	width:100%;
+}
+#logo {
+	width:100%;
+	height:140px;
+	text-align: center;
+	line-height:140px;
+}
+
+#logoImg {
+	width:100px;
+	height:100px;
+	
+	/* 정렬 */
+	vertical-align:bottom;
+	
+	/* 둥글게 */
+	border-radius: 70%;
+	overflow: hidden;
+}
+
+#user_data_nick {
+	margin-top:10px;
+	text-align:center;
+	font-size:20px;
+	height:40px;
+}
+
+#user_wrap {
+	width: 195px;
+	height: 500px;
+	margin-left: 30px;
+	float: left;
+}
+
+#icon_home {
+	font-size:30px;
+	color:#00CCFF;
+	text-decoration: none;		
+}
+
+#icon_home:hover {
+	text-decoration: none;	
+}
+
+#follow_wrapper {
+	width: 100%;
+ text-align: center;
+}
+#follow {
+	display: inline-block;
+}
+
+#heart {
+	margin-top:10px;
+	font-size:20px;
+	color:#FF0000;
+}

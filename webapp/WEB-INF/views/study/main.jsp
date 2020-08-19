@@ -31,7 +31,7 @@
 
 
 <body>
-
+	<c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
 	<div id="body">
 
 
@@ -44,7 +44,7 @@
 			<div class="study_area">
 
 				<!-- 제목 -->
-				<div id="study_title">제목 넣을자리</div>
+				<div id="study_title">삼국시대 - 고구려</div>
 				<!-- 제목 -->
 
 				<!-- 카드 -->
@@ -83,18 +83,31 @@
 			</div>
 			<!-- study_area 끝  -->
 
-
-			<div id="study_user">
-				<div>크롱</div>
-
-				<ul id="study_user_nav">
-					<li><a href="#">&#xf00c 학습하기</a></li>
-					<li><a href="#">&#xF24d 낱말 카드</a></li>
-					<li><a href="#">&#xf044 테스트</a></li>
-					<li><a href="#">&#xf11b 게임</a></li>
-				</ul>
+			<div id="user_wrap">
+				<div class="fontAwsome"><a href="#" id="icon_home">&#xf015</a></div>
+				<div id="study_user">
+					<div id="user_data">
+						<div id="logo">
+							<img src="${pageContext.request.contextPath}/assets/images/01.메인.png" id="logoImg"/>
+						</div>
+						<div id="user_data_nick">크롱</div>
+					</div>
+					<div id="follow_wrapper">
+						<div>
+							<span><a>팔로잉</a></span>
+							<span>|</span>
+							<span><a>팔로워</a></span>
+						</div>
+						<div id="heart" class="fontAwsome">&#xf004</div>
+					</div>
+					<ul id="study_user_nav" class="fontAwsome">
+						<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
+						<li><a href="#"><span>&#xF24d</span> 낱말 카드</a></li>
+						<li><a href="#"><span>&#xf044</span> 테스트</a></li>
+						<li><a href="#"><span>&#xf11b</span> 게임</a></li>
+					</ul>
+				</div>
 			</div>
-
 		</div>
 		<!-- study_area, study_user, bottom line을 위한 wrap 끝 -->
 
