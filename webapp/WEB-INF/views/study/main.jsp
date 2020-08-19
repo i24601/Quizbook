@@ -59,8 +59,9 @@
 
 				<!-- 버튼-->
 				<div>
+
 					<div class="CardsList-navControl previousButton">
-						<span><button disabled="" title="이전 카드" type="button">
+						<span><button title="다음 카드" type="button">
 								<span>◀</span>
 							</button></span>
 					</div>
@@ -75,6 +76,7 @@
 								<span>▶</span>
 							</button></span>
 					</div>
+
 				</div>
 				<!-- 버튼 -->
 
@@ -125,12 +127,15 @@
 						//주의 따로 변수 선언해서 front back if 조건으로 주면 다 뒤집히지 않았을때 문제 time out같은걸
 
 						if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
+							console.log("앞->뒤");
+
 							$('.card').animate({
 								deg : 180
 							}, {
 								duration : 500,
 								step : function(now) {
-									console.log(now);
+									/* console.log(now); */
+
 									$(".card").css({
 										transform : 'rotateX(' + now + 'deg)'
 									});
@@ -140,12 +145,14 @@
 						}
 
 						else {
+							console.log("뒤->앞");
+
 							$('.card').animate({
 								deg : 0
 							}, {
 								duration : 500,
 								step : function(now) {
-									console.log(now);
+									/* console.log(now); */
 
 									$(".card").css({
 										transform : 'rotateX(' + now + 'deg)'
@@ -159,18 +166,120 @@
 
 	$(".nextButton").on('click', function() {
 		console.log("버튼클릭");
+		$(".card_wrap").clearQueue();
+		$(".card").clearQueue();
+
 		console.log(card_front);
-		
+
 		if (card_front == true) {
-			$(".card").css('transform', '').queue(function() {
-				$(".card").addClass('previous');
-			});
+			console.log('앞 next실행')
+			
+			$(".card_wrap").addClass('next');
+				/* $(".card").css('transform','').dequeue(); */
+				console.log("애니메이션 시작");
+				
+				
+				setTimeout(function() {
+					$('.front').text('previous_front');
+					$('.back').text('previous_front_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+				}, 1000);
+
+				setTimeout(function() {
+					$(".card_wrap").removeClass('next');
+				}, 1000);
+
 		}
 		//back일때
 		//elment에 transform요소를 중복해서 쓸수 없으므로(rotate, translate) card를 싸는 card_wrap을 만들어 각각 적용 card(rotate), card_wrap(translate)
 		else {
-			$(".card_wrap").addClass('previous').delay(900).queue(function(){
-				$(".card_wrap").removeClass('previous').dequeue();
+			console.log('뒤 next실행')
+			//우선순위 1.addClass에 콜백함수를 추가한 함수를 새로 선언하거나(실패) https://gist.github.com/gabrysiak/166befef3264d0c53f47 
+			//2.queue dequeue를 사용(어중간하게 적용), 3.setTimeout
+			$(".card_wrap").addClass('next').delay(1000).queue(function() {
+				/* $(".card").css('transform','').dequeue(); */
+				console.log("애니메이션 시작");
+				$('.card').animate({
+					deg : 0
+				}, {
+					duration : 1,
+					step : function(now) {
+						console.log(now);
+
+						$(".card").css({
+							transform : 'rotateX(' + now + 'deg)'
+						});
+
+					}
+				}).dequeue();
+				
+				setTimeout(function() {
+					$('.front').text('next_front');
+					$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+				}, 100);
+
+				setTimeout(function() {
+					$(".card_wrap").removeClass('next');
+				}, 100);
+
+			});
+		}
+
+	});
+	
+	$(".previousButton").on('click', function() {
+		console.log("버튼클릭");
+		$(".card_wrap").clearQueue();
+		$(".card").clearQueue();
+
+		console.log(card_front);
+
+		if (card_front == true) {
+			console.log('앞 previous실행')
+			
+			$(".card_wrap").addClass('previous');
+				/* $(".card").css('transform','').dequeue(); */
+				console.log("애니메이션 시작");
+
+				$('.front').text('previous_front_front');
+				$('.back').text('previous_front_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+				setTimeout(function() {
+					$(".card_wrap").removeClass('previous');
+				}, 1000);
+
+		}
+		//back일때
+		//elment에 transform요소를 중복해서 쓸수 없으므로(rotate, translate) card를 싸는 card_wrap을 만들어 각각 적용 card(rotate), card_wrap(translate)
+		else {
+			console.log('뒤 previous실행')
+			//우선순위 1.addClass에 콜백함수를 추가한 함수를 새로 선언하거나(실패) https://gist.github.com/gabrysiak/166befef3264d0c53f47 
+			//2.queue dequeue를 사용(어중간하게 적용), 3.setTimeout
+			$(".card_wrap").addClass('previous').delay(1000).queue(function() {
+				/* $(".card").css('transform','').dequeue(); */
+				console.log("애니메이션 시작");
+				$('.card').animate({
+					deg : 0
+				}, {
+					duration : 1,
+					step : function(now) {
+						console.log(now);
+
+						$(".card").css({
+							transform : 'rotateX(' + now + 'deg)'
+						});
+
+					}
+				}).dequeue();
+
+				$('.front').text('previous_front');
+				$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+				setTimeout(function() {
+					$(".card_wrap").removeClass('previous');
+				}, 100);
+
 			});
 		}
 
