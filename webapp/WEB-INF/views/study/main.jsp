@@ -180,8 +180,8 @@
 				
 				
 				setTimeout(function() {
-					$('.front').text('previous_front');
-					$('.back').text('previous_front_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+					$('.front').text('next_front');
+					$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
 				}, 1000);
 
@@ -213,11 +213,8 @@
 					}
 				}).dequeue();
 				
-				setTimeout(function() {
-					$('.front').text('next_front');
-					$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
-				}, 100);
+				$('.front').text('next_front');
+				$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
 				setTimeout(function() {
 					$(".card_wrap").removeClass('next');
@@ -241,9 +238,12 @@
 			$(".card_wrap").addClass('previous');
 				/* $(".card").css('transform','').dequeue(); */
 				console.log("애니메이션 시작");
+				
+				setTimeout(function() {
+					$('.front').text('previous_front');
+					$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
-				$('.front').text('previous_front_front');
-				$('.back').text('previous_front_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+				}, 1000);
 
 				setTimeout(function() {
 					$(".card_wrap").removeClass('previous');
