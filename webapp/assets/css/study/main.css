@@ -233,3 +233,26 @@ div.card {
 	margin-top:10px;
 	font-size: 25px;
 }
+
+.card_left {
+	float:left;
+	height:100%;
+	width:40px;
+	background-color:gray;
+	border-radius: 10px 0px 0px 10px;
+	outline:0;
+}
+
+.card_right {
+	float:right;
+	height:100%;
+	width:40px;
+	background-color:gray;
+	border-radius: 0px 10px 10px 0px;
+	border-collapse:seperate;
+	outline:0;
+}
+
+/* .card_nav {
+	display:none;
+} */

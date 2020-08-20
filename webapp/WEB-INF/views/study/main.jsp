@@ -51,8 +51,10 @@
 				<div class="card_wrap">
 					<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
 					<div class="card" id="card">
-						<div class="front">front</div>
-						<div class="back">back</div>
+						<div class="card_left card_nav"></div>
+							<div class="front">front</div>
+							<div class="back">back</div>
+						<div class="card_right card_nav"></div>
 					</div>
 				</div>
 				<!-- 카드 -->
