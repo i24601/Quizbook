@@ -53,15 +53,18 @@
 					<div class="card" id="card">
 						
 						
-					<div class="card_left card_nav"></div>
+					<div class="card_left"></div>
+					<div class="card_left button_back"></div>
 					
 						<div class="card_content">
 							<div class="front">front</div>
 							<div class="back">back</div>
 						</div>
-						
-					<div class="card_right card_nav"></div>
-						
+					
+					
+					<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
+					<div class="card_right"></div>
+					<div class="card_right button_back"></div>						
 						
 					</div>
 				</div>

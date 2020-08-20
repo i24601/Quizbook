@@ -139,6 +139,10 @@ div.card {
 	transform: rotateX(180deg);
 }
 
+.button_back {
+	transform: rotateX(180deg);
+}
+
 .front{
 	background-color:green;
 }
@@ -274,6 +278,3 @@ div.card {
 	position:absolute;
 	z-index:0;
 }
-/* .card_nav {
-	display:none;
-} */
