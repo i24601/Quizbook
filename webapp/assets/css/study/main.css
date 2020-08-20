@@ -115,8 +115,6 @@ div.card {
 	cursor: pointer;
 	/* position: relative 까지 포함됨 */
 	perspective: 1000px;
-	
-	background-color:red;
 }
 
 .front, .back {
@@ -124,22 +122,26 @@ div.card {
 	height: 100%;
 	border: 1px solid gray;
 	border-radius: 10px;
-	/* position: relative가 조상에 있어야함 */
-	/* 최종위치  */ 
+	
 	/* position : absolute; */
-	/* 애니메이션 */
+	/* flex 사용하기 위해서는 position: relative가 조상에 있어야함 */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	/* 애니메이션 */
 	backface-visibility: hidden;
 	
-	position:relative;
-	z-index:0;
+	position:absolute;
+}
+
+.front {
+	background-color:blue;	
 }
 
 .back {
 	transform: rotateX(180deg);
+	background-color:red;	
 }
 
 .next {
@@ -240,30 +242,35 @@ div.card {
 }
 
 .card_left {
-	float:left;
+	left:0;
 	height:100%;
 	width:40px;
 	background-color:gray;
 	border-radius: 10px 0px 0px 10px;
 	outline:0;
 	
-	position:relative;
+	position:absolute;
 	z-index:1;
 }
 
 .card_right {
-	float:right;
+	right:0;	
 	height:100%;
 	width:40px;
 	background-color:gray;
 	border-radius: 0px 10px 10px 0px;
-	border-collapse:seperate;
 	outline:0;
 	
-	position:relative;
+	position:absolute;
 	z-index:1;
 }
 
+.card_content {
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:0;
+}
 /* .card_nav {
 	display:none;
 } */
