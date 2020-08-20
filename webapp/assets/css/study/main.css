@@ -135,13 +135,16 @@ div.card {
 	position:absolute;
 }
 
-.front {
-	background-color:blue;	
+.back {
+	transform: rotateX(180deg);
+}
+
+.front{
+	background-color:green;
 }
 
 .back {
-	transform: rotateX(180deg);
-	background-color:red;	
+	background-color:cyan;
 }
 
 .next {
@@ -245,24 +248,24 @@ div.card {
 	left:0;
 	height:100%;
 	width:40px;
-	background-color:gray;
 	border-radius: 10px 0px 0px 10px;
 	outline:0;
 	
 	position:absolute;
-	z-index:1;
+	z-index:99;
+	background-color:red;
 }
 
 .card_right {
 	right:0;	
 	height:100%;
 	width:40px;
-	background-color:gray;
 	border-radius: 0px 10px 10px 0px;
 	outline:0;
 	
 	position:absolute;
-	z-index:1;
+	z-index:99;
+	background-color:blue;
 }
 
 .card_content {
