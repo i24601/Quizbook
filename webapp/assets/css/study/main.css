@@ -115,6 +115,8 @@ div.card {
 	cursor: pointer;
 	/* position: relative 까지 포함됨 */
 	perspective: 1000px;
+	
+	background-color:red;
 }
 
 .front, .back {
@@ -123,14 +125,17 @@ div.card {
 	border: 1px solid gray;
 	border-radius: 10px;
 	/* position: relative가 조상에 있어야함 */
-	/* 최종위치  */ position : absolute;
+	/* 최종위치  */ 
+	/* position : absolute; */
 	/* 애니메이션 */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	backface-visibility: hidden;
-	position: absolute
+	
+	position:relative;
+	z-index:0;
 }
 
 .back {
@@ -241,6 +246,9 @@ div.card {
 	background-color:gray;
 	border-radius: 10px 0px 0px 10px;
 	outline:0;
+	
+	position:relative;
+	z-index:1;
 }
 
 .card_right {
@@ -251,6 +259,9 @@ div.card {
 	border-radius: 0px 10px 10px 0px;
 	border-collapse:seperate;
 	outline:0;
+	
+	position:relative;
+	z-index:1;
 }
 
 /* .card_nav {

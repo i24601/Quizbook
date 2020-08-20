@@ -52,8 +52,10 @@
 					<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
 					<div class="card" id="card">
 						<div class="card_left card_nav"></div>
-							<div class="front">front</div>
-							<div class="back">back</div>
+							<div class="card_content">
+								<div class="front">front</div>
+								<div class="back">back</div>
+							</div>
 						<div class="card_right card_nav"></div>
 					</div>
 				</div>
@@ -129,7 +131,7 @@
 <script type="text/javascript">
 	var card_front = true;
 
-	$(".card")
+	$(".card_content")
 			.on(
 					'click',
 					function() {
@@ -179,7 +181,7 @@
 						}
 					});
 
-	$(".nextButton").on('click', function() {
+	$(".nextButton,.card_right").on('click', function() {
 		console.log("버튼클릭");
 		$(".card_wrap").clearQueue();
 		$(".card").clearQueue();
@@ -240,7 +242,7 @@
 
 	});
 	
-	$(".previousButton").on('click', function() {
+	$(".previousButton,.card_left").on('click', function() {
 		console.log("버튼클릭");
 		$(".card_wrap").clearQueue();
 		$(".card").clearQueue();
