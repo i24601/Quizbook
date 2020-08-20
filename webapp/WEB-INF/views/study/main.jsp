@@ -51,21 +51,29 @@
 				<div class="card_wrap">
 					<!--id지우고 class="card" 뒤에 onclick="flip(event) -->
 					<div class="card" id="card">
-						
-						
-					<div class="card_left card_nav"></div>
-					<div class="card_left button_back card_nav"></div>
-					
+
+						<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
+						<div class="card_left card_nav fontAwsome">&#xf104</div>
+						<div class="card_left button_back card_nav fontAwsome">&#xf104</div>
+
 						<div class="card_content">
-							<div class="front"><img src="${pageContext.request.contextPath}/assets/images/01.메인.png" id="ImgTest"/></div>
-							<div class="back"><img src="${pageContext.request.contextPath}/assets/images/01.메인.png" id="ImgTest"/></div>
+							<div class="front">
+								<img
+									src="${pageContext.request.contextPath}/assets/images/01.메인.png"
+									id="ImgTest" />
+							</div>
+							<div class="back">
+								<img
+									src="${pageContext.request.contextPath}/assets/images/01.메인.png"
+									id="ImgTest" />
+							</div>
 						</div>
-					
-					
-					<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
-					<div class="card_right card_nav"></div>
-					<div class="card_right button_back card_nav"></div>						
-						
+
+
+						<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
+						<div class="card_right card_nav fontAwsome">&#xf105</div>
+						<div class="card_right button_back card_nav fontAwsome">&#xf105</div>
+
 					</div>
 				</div>
 				<!-- 카드 -->
@@ -97,21 +105,31 @@
 			<!-- study_area 끝  -->
 
 			<div id="user_wrap">
-				<div class="fontAwsome"><a href="#" id="icon_home">&#xf015</a></div>
+				<div class="fontAwsome">
+					<a href="#" id="icon_home">&#xf015</a>
+				</div>
 				<div id="study_user">
 					<div id="user_data">
 						<div id="logo">
-							<img src="${pageContext.request.contextPath}/assets/images/01.메인.png" id="logoImg"/>
+							<img
+								src="${pageContext.request.contextPath}/assets/images/01.메인.png"
+								id="logoImg" />
 						</div>
 						<div id="user_data_nick">크롱</div>
 					</div>
-					<div id="follow_wrapper">
-						<div>
-							<span><a href="#">팔로잉</a></span>
-							<span>|</span>
-							<span><a href="#">팔로워</a></span>
+					<div id="followNo">
+						<div id="following">
+							<a href="#">팔로잉 1</a>
 						</div>
-						<div class="fontAwsome" id="heart"><a href="#" id="aHeart">&#xf004</a></div>
+						<div id="follow_divider">|</div>
+						<div id="follower">
+							<a href="#">팔로워 1000</a>
+						</div>
+					</div>
+					<div id="heart_wrap">
+						<div class="fontAwsome" id="heart">
+							<a href="#" id="aHeart">&#xf004</a>
+						</div>
 					</div>
 					<ul id="study_user_nav" class="fontAwsome">
 						<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
@@ -199,21 +217,20 @@
 
 		if (card_front == true) {
 			console.log('앞 next실행')
-			
+
 			$(".card_wrap").addClass('next');
-				/* $(".card").css('transform','').dequeue(); */
-				console.log("애니메이션 시작");
-				
-				
-				setTimeout(function() {
-					$('.front').text('next_front');
-					$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+			/* $(".card").css('transform','').dequeue(); */
+			console.log("애니메이션 시작");
 
-				}, 1000);
+			setTimeout(function() {
+				$('.front').text('next_front');
+				$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
-				setTimeout(function() {
-					$(".card_wrap").removeClass('next');
-				}, 1000);
+			}, 1000);
+
+			setTimeout(function() {
+				$(".card_wrap").removeClass('next');
+			}, 1000);
 
 		}
 		//back일때
@@ -238,7 +255,7 @@
 
 					}
 				}).dequeue();
-				
+
 				$('.front').text('next_front');
 				$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
@@ -250,66 +267,92 @@
 		}
 
 	});
-	
-	$(".previousButton,.card_left").on('click', function() {
-		console.log("버튼클릭");
-		$(".card_wrap").clearQueue();
-		$(".card").clearQueue();
 
-		console.log(card_front);
+	$(".previousButton,.card_left")
+			.on(
+					'click',
+					function() {
+						console.log("버튼클릭");
+						$(".card_wrap").clearQueue();
+						$(".card").clearQueue();
 
-		if (card_front == true) {
-			console.log('앞 previous실행')
-			
-			$(".card_wrap").addClass('previous');
-				/* $(".card").css('transform','').dequeue(); */
-				console.log("애니메이션 시작");
-				
-				setTimeout(function() {
-					$('.front').text('previous_front');
-					$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+						console.log(card_front);
 
-				}, 1000);
+						if (card_front == true) {
+							console.log('앞 previous실행')
 
-				setTimeout(function() {
-					$(".card_wrap").removeClass('previous');
-				}, 1000);
+							$(".card_wrap").addClass('previous');
+							/* $(".card").css('transform','').dequeue(); */
+							console.log("애니메이션 시작");
 
-		}
-		//back일때
-		//elment에 transform요소를 중복해서 쓸수 없으므로(rotate, translate) card를 싸는 card_wrap을 만들어 각각 적용 card(rotate), card_wrap(translate)
-		else {
-			console.log('뒤 previous실행')
-			//우선순위 1.addClass에 콜백함수를 추가한 함수를 새로 선언하거나(실패) https://gist.github.com/gabrysiak/166befef3264d0c53f47 
-			//2.queue dequeue를 사용(어중간하게 적용), 3.setTimeout
-			$(".card_wrap").addClass('previous').delay(1000).queue(function() {
-				/* $(".card").css('transform','').dequeue(); */
-				console.log("애니메이션 시작");
-				$('.card').animate({
-					deg : 0
-				}, {
-					duration : 1,
-					step : function(now) {
-						console.log(now);
+							setTimeout(
+									function() {
+										$('.front').text('previous_front');
+										$('.back')
+												.text(
+														'previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
-						$(".card").css({
-							transform : 'rotateX(' + now + 'deg)'
-						});
+									}, 1000);
 
-					}
-				}).dequeue();
+							setTimeout(function() {
+								$(".card_wrap").removeClass('previous');
+							}, 1000);
 
-				$('.front').text('previous_front');
-				$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+						}
+						//back일때
+						//elment에 transform요소를 중복해서 쓸수 없으므로(rotate, translate) card를 싸는 card_wrap을 만들어 각각 적용 card(rotate), card_wrap(translate)
+						else {
+							console.log('뒤 previous실행')
+							//우선순위 1.addClass에 콜백함수를 추가한 함수를 새로 선언하거나(실패) https://gist.github.com/gabrysiak/166befef3264d0c53f47 
+							//2.queue dequeue를 사용(어중간하게 적용), 3.setTimeout
+							$(".card_wrap")
+									.addClass('previous')
+									.delay(1000)
+									.queue(
+											function() {
+												/* $(".card").css('transform','').dequeue(); */
+												console.log("애니메이션 시작");
+												$('.card')
+														.animate(
+																{
+																	deg : 0
+																},
+																{
+																	duration : 1,
+																	step : function(
+																			now) {
+																		console
+																				.log(now);
 
-				setTimeout(function() {
-					$(".card_wrap").removeClass('previous');
-				}, 100);
+																		$(
+																				".card")
+																				.css(
+																						{
+																							transform : 'rotateX('
+																									+ now
+																									+ 'deg)'
+																						});
 
-			});
-		}
+																	}
+																}).dequeue();
 
-	});
+												$('.front').text(
+														'previous_front');
+												$('.back')
+														.text(
+																'previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+												setTimeout(
+														function() {
+															$(".card_wrap")
+																	.removeClass(
+																			'previous');
+														}, 100);
+
+											});
+						}
+
+					});
 </script>
 
 <!-- id 안쓰고 class="card" 뒤에 onclick="flip(event) 쓸 경우 

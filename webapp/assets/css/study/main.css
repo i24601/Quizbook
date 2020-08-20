@@ -44,7 +44,8 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 
 #study_user {
 	height: 400px;
-	box-shadow: 0px 0px 4px #adffff;
+	box-shadow: 0px 0px 4px #808080;
+	text-align:center
 }
 
 .CardsList-navControl {
@@ -68,14 +69,16 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_user_nav {
-	font-size: 20px;
+	font-size: 16px;
+	color:#515151;
 	width: 80%;
 	margin-left: 10%;
 	clear: both;
+	text-align:left;
 }
 
 #study_user_nav>li {
-	height: 35px;
+	height: 33px;
 	text-decoration: none;
 	padding: 8px 15px 8px 15px;
 	font-weight: bold;
@@ -88,7 +91,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_user_nav>li>a:hover {
-	border-bottom: 2px solid #ff9900;
+	border-bottom: 2px solid #F1C40F;
 }
 
 .fontAwsome {
@@ -143,14 +146,6 @@ div.card {
 	transform: rotateX(180deg);
 }
 
-.front{
-	background-color:green;
-}
-
-.back {
-	background-color:cyan;
-}
-
 .next {
 	transition: opacity, transform;
 	transition-duration: 1000ms;
@@ -167,7 +162,7 @@ div.card {
 
 /* 애니메이션 끝 */
 #study_user_nav>li>a>span {
-	color: #00CCFF;
+	color: #4EA3DC;
 }
 
 #user_data {
@@ -207,7 +202,7 @@ div.card {
 
 #icon_home {
 	font-size: 30px;
-	color: #00CCFF;
+	color: #4EA3DC;
 	text-decoration: none;
 }
 
@@ -215,26 +210,43 @@ div.card {
 	text-decoration: none;
 }
 
-#follow_wrapper {
-	width: 100%;
-	text-align: center;
+#followNo {
+	width: 70%;
+	height:20px;
+	text-align:center;
+	display:inline-block;
 }
 
-#follow {
-	display: inline-block;
+#following {
+	float:left;
+	text-align:right;
+	width:45%;
+}
+
+#follower {
+	float:right;
+	text-align:left;
+	width:45%;
+}
+
+#follow_divider {
+	text-align:center;
+	width:10%;
+	float:left;
 }
 
 #aHeart {
-	color: #FF0000;
+	color: #E74C3C;
 	text-decoration:none;
 }
 
 #aHeart:hover {
-	color: #FF0000;
+	color: #E74C3C;
 	text-decoration:none;
 }
 
-#follow_wrapper>div>span>a {
+#followNo a {
+	font-size:11px;
 	text-decoration: none;
 	color:#000000;
 }
@@ -244,14 +256,19 @@ div.card {
 }
 
 #heart {
+	width:100%;
+}
+
+#heart {
+	text-align:center;
 	margin-top:10px;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 .card_left {
 	left:0;
 	height:100%;
-	width:40px;
+	width:60px;
 	border-radius: 10px 0px 0px 10px;
 	outline:0;
 	
@@ -262,7 +279,7 @@ div.card {
 .card_right {
 	right:0;	
 	height:100%;
-	width:40px;
+	width:60px;
 	border-radius: 0px 10px 10px 0px;
 	outline:0;
 	
@@ -283,7 +300,29 @@ div.card {
 	height: 100%;
 }
 
+.card_nav {
+	
+	font-size:50px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align:center;
+	
+	/* rgba를 쓸경우 다 같이써야한다 */
+	
+	position:absolute;
+	color:rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);	
+	
+}
 .card:hover .card_nav {
-	background-color:gray;
-	opacity:0.9;
+	
+	/* 백드라운드 */
+	background-color: rgba(207, 207, 207, 0.1);
+
+	/* 폰트 */
+	color:rgba(0, 0, 0, 1);
+	
+	
 }
