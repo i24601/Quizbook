@@ -60,11 +60,12 @@
 
 							<div class="front">
 								<div id="card_content">
+									<!-- if조건 처리 후 ajax $(".card_content").html("element") 사용해서  -->
 
 									<img
 										src="${pageContext.request.contextPath}/assets/images/corn.jpg"
 										class="img" />
-										
+
 									<div class="text">옥수수</div>
 
 								</div>
@@ -109,8 +110,8 @@
 							</button>
 						</span>
 					</div>
-	
-	
+
+
 					<div class="CardsList-navControl progressIndex">
 						<ul id="index">
 							<li>1</li>
@@ -118,7 +119,7 @@
 							<li>150</li>
 						</ul>
 					</div>
-	
+
 					<div class="CardsList-navControl nextButton">
 						<span>
 							<button title="다음 카드" type="button" class="card_btn">
@@ -316,11 +317,8 @@
 							setTimeout(
 									function() {
 										$('.front').text('previous_front');
-										$('.back')
-												.text(
-														'previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
-									}, 1000);
+										$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+										}, 1000);
 
 							setTimeout(function() {
 								$(".card_wrap").removeClass('previous');
@@ -340,42 +338,12 @@
 											function() {
 												/* $(".card").css('transform','').dequeue(); */
 												console.log("애니메이션 시작");
-												$('.card')
-														.animate(
-																{
-																	deg : 0
-																},
-																{
-																	duration : 1,
-																	step : function(
-																			now) {
-																		console
-																				.log(now);
+												$('.card').animate({deg : 0},{duration : 1, step : function(now) { $(".card").css({transform : 'rotateX('+ now + 'deg)'});}}).dequeue();
+												
+												$('.front').text('previous_front');
+												$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
-																		$(
-																				".card")
-																				.css(
-																						{
-																							transform : 'rotateX('
-																									+ now
-																									+ 'deg)'
-																						});
-
-																	}
-																}).dequeue();
-
-												$('.front').text(
-														'previous_front');
-												$('.back')
-														.text(
-																'previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
-												setTimeout(
-														function() {
-															$(".card_wrap")
-																	.removeClass(
-																			'previous');
-														}, 100);
+												setTimeout(function() {$(".card_wrap").removeClass('previous');}, 100);
 
 											});
 						}

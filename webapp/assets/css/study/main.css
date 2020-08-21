@@ -16,13 +16,12 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 #study_nav {
-	margin-top: 50px; width : 210px;
+	margin-top: 50px; 
+	width : 182px;
 	height: 600px;
 	margin-left: 55px;
 	float: left;
 	border: 2px solid black;
-	margin-left: 55px;
-	width: 210px;
 }
 
 #study_wrap {
