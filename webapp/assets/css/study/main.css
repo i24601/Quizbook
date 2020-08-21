@@ -100,9 +100,11 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 /* 애니메이션 시작 */
 div.card_wrap {
-	width: 100%;
+	width: 500px;
 	height: 350px;
 	float: left;
+	
+	position:relative;
 }
 
 div.study_area {
@@ -114,7 +116,7 @@ div.study_area {
 
 div.card {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 	transform-style: preserve-3d;
 	cursor: pointer;
 	/* position: relative 까지 포함됨 */
@@ -195,8 +197,12 @@ div.card {
 }
 
 #user_wrap {
-	width: 195px;
-	height: 500px;
+	/* width: 195px;
+	height: 500px; */
+	
+	width: 170px;
+	height: 350px;
+	
 	margin-left: 30px;
 	float: left;
 }
@@ -297,7 +303,6 @@ div.card {
 
 
 .img {
-	display:inline;
 	object-fit: contain;
 	max-height: 50%;
 	max-width: 50%;
@@ -346,6 +351,19 @@ div.card {
 	color:#000000;
 }
 
+#front_content {
+	display: flex;
+    align-items: center;
+	width:100%;
+	height:100%;
+}
+
 .text {
-	display:inline;
+	display: table-cell; 
+	vertical-align: middle;
+	text-align:center;
+	
+	
+	width:50%;
+	height:100%;
 }

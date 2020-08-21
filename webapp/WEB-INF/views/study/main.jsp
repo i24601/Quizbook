@@ -59,10 +59,15 @@
 						<div class="card_content">
 
 							<div class="front">
-									<img
-										src="${pageContext.request.contextPath}/assets/images/rabbit.jpg"
-										class="img" />
-									<div class="text">옥수수</div>
+									<div id="front_content">
+									
+										<img
+											src="${pageContext.request.contextPath}/assets/images/rabbit.jpg"
+											class="img" />
+											
+										<div class="text">설명</div>
+									
+									</div>
 							</div>
 							<div class="back">
 									<img
@@ -78,11 +83,9 @@
 						<div class="card_right button_back card_nav fontAwsome">&#xf105</div>
 
 					</div>
-				</div>
-				<!-- 카드 -->
-
-				<!-- 버튼-->
-
+					
+					<!-- 버튼-->
+				
 				<div class="CardsList-navControl previousButton">
 					<span>
 						<button title="이전 카드" type="button" class="card_btn">
@@ -109,6 +112,37 @@
 				</div>
 
 				<!-- 버튼 -->
+				</div>
+				<!-- 카드 -->
+
+				<!-- 버튼-->
+				
+				<!-- <div class="CardsList-navControl previousButton">
+					<span>
+						<button title="이전 카드" type="button" class="card_btn">
+							<span class="fontAwsome">&#xf0d9</span>
+						</button>
+					</span>
+				</div>
+
+
+				<div class="CardsList-navControl progressIndex">
+					<ul id="index">
+						<li>1</li>
+						<li>/</li>
+						<li>150</li>
+					</ul>
+				</div>
+
+				<div class="CardsList-navControl nextButton">
+					<span>
+						<button title="다음 카드" type="button" class="card_btn">
+							<span class="fontAwsome">&#xf0da</span>
+						</button>
+					</span>
+				</div> -->
+
+				<!-- 버튼 -->
 
 			</div>
 			<!-- study_area 끝  -->
@@ -132,7 +166,7 @@
 						</div>
 						<div id="follow_divider">|</div>
 						<div id="follower">
-							<a href="#">팔로워 1000</a>
+							<a href="#">팔로워 10</a>
 						</div>
 					</div>
 					<div id="heart_wrap">
