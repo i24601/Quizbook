@@ -97,8 +97,11 @@
 
 					</div>
 
-					<!-- 버튼-->
+				</div>
+				<!-- 카드 -->
 
+				<!-- 버튼-->
+				<div id="btn">
 					<div class="CardsList-navControl previousButton">
 						<span>
 							<button title="이전 카드" type="button" class="card_btn">
@@ -106,8 +109,8 @@
 							</button>
 						</span>
 					</div>
-
-
+	
+	
 					<div class="CardsList-navControl progressIndex">
 						<ul id="index">
 							<li>1</li>
@@ -115,7 +118,7 @@
 							<li>150</li>
 						</ul>
 					</div>
-
+	
 					<div class="CardsList-navControl nextButton">
 						<span>
 							<button title="다음 카드" type="button" class="card_btn">
@@ -123,38 +126,7 @@
 							</button>
 						</span>
 					</div>
-
-					<!-- 버튼 -->
 				</div>
-				<!-- 카드 -->
-
-				<!-- 버튼-->
-
-				<!-- <div class="CardsList-navControl previousButton">
-					<span>
-						<button title="이전 카드" type="button" class="card_btn">
-							<span class="fontAwsome">&#xf0d9</span>
-						</button>
-					</span>
-				</div>
-
-
-				<div class="CardsList-navControl progressIndex">
-					<ul id="index">
-						<li>1</li>
-						<li>/</li>
-						<li>150</li>
-					</ul>
-				</div>
-
-				<div class="CardsList-navControl nextButton">
-					<span>
-						<button title="다음 카드" type="button" class="card_btn">
-							<span class="fontAwsome">&#xf0da</span>
-						</button>
-					</span>
-				</div> -->
-
 				<!-- 버튼 -->
 
 			</div>

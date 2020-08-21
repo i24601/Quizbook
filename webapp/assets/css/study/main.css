@@ -101,15 +101,15 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 /* 애니메이션 시작 */
 div.card_wrap {
 	width: 500px;
-	height: 350px;
+	height: 300px;
 	float: left;
 	
 	position:relative;
 }
 
 div.study_area {
-	width: 580px;
-	height: 470px;
+	width: 500px;
+	height: 430px;
 	float: left;
 	position: relative;
 }
@@ -365,3 +365,4 @@ div.card {
 	width:50%;
 	max-width:100%;
 }
+
