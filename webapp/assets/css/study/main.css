@@ -27,9 +27,9 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 
 #study_wrap {
 	margin-top: 50px;
-	width: 805px;
-	height: 550px;
-	border-bottom: 2px solid #888888;
+	width: 690px;
+	height: 500px;
+	border-bottom: 2px solid #c3c3c3;
 	float: left;
 	margin-left: 85px;
 }
@@ -203,7 +203,7 @@ div.card {
 	width: 170px;
 	height: 350px;
 	
-	margin-left: 30px;
+	margin-left: 20px;
 	float: left;
 }
 

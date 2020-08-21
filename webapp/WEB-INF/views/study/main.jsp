@@ -255,7 +255,7 @@
 				$('.back').text('next_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
 			}, 1000);
-
+			
 			setTimeout(function() {
 				$(".card_wrap").removeClass('next');
 			}, 1000);
