@@ -59,21 +59,34 @@
 						<div class="card_content">
 
 							<div class="front">
-									<div id="front_content">
-									
-										<img
-											src="${pageContext.request.contextPath}/assets/images/rabbit.jpg"
-											class="img" />
-											
-										<div class="text">설명</div>
-									
-									</div>
-							</div>
-							<div class="back">
+								<div id="card_content">
+
 									<img
 										src="${pageContext.request.contextPath}/assets/images/corn.jpg"
 										class="img" />
+										
 									<div class="text">옥수수</div>
+
+								</div>
+							</div>
+							<div class="back">
+								<div id="card_content">
+
+									<img
+										src="${pageContext.request.contextPath}/assets/images/rabbit.jpg"
+										class="img" />
+
+									<div class="text">Lorem ipsum dolor sit amet, consectetur
+										adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+										exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate
+										velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+										sint occaecat cupidatat non proident, sunt in culpa qui
+										officia deserunt mollit anim id est laborum.</div>
+
+								</div>
+
 							</div>
 						</div>
 
@@ -83,40 +96,40 @@
 						<div class="card_right button_back card_nav fontAwsome">&#xf105</div>
 
 					</div>
-					
+
 					<!-- 버튼-->
-				
-				<div class="CardsList-navControl previousButton">
-					<span>
-						<button title="이전 카드" type="button" class="card_btn">
-							<span class="fontAwsome">&#xf0d9</span>
-						</button>
-					</span>
-				</div>
+
+					<div class="CardsList-navControl previousButton">
+						<span>
+							<button title="이전 카드" type="button" class="card_btn">
+								<span class="fontAwsome">&#xf0d9</span>
+							</button>
+						</span>
+					</div>
 
 
-				<div class="CardsList-navControl progressIndex">
-					<ul id="index">
-						<li>1</li>
-						<li>/</li>
-						<li>150</li>
-					</ul>
-				</div>
+					<div class="CardsList-navControl progressIndex">
+						<ul id="index">
+							<li>1</li>
+							<li>/</li>
+							<li>150</li>
+						</ul>
+					</div>
 
-				<div class="CardsList-navControl nextButton">
-					<span>
-						<button title="다음 카드" type="button" class="card_btn">
-							<span class="fontAwsome">&#xf0da</span>
-						</button>
-					</span>
-				</div>
+					<div class="CardsList-navControl nextButton">
+						<span>
+							<button title="다음 카드" type="button" class="card_btn">
+								<span class="fontAwsome">&#xf0da</span>
+							</button>
+						</span>
+					</div>
 
-				<!-- 버튼 -->
+					<!-- 버튼 -->
 				</div>
 				<!-- 카드 -->
 
 				<!-- 버튼-->
-				
+
 				<!-- <div class="CardsList-navControl previousButton">
 					<span>
 						<button title="이전 카드" type="button" class="card_btn">
