@@ -165,7 +165,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	margin: 0 auto;
     padding: 0 30px;
 	width: 1400px;
-	height: 15px;
+	height: 100%;
 }
 
 #divider {
@@ -176,10 +176,16 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	opacity: .2;
 }
 
+.footer_Top_bg {
+    position: relative;
+	height: 20px;
+	background-color: #4257B2;
+}
+
 .footer_bg {
     position: relative;
-    height: 35px;
-    background-color: #FFFFFF;
+    height: 60px;
+	background-color: #4257B2;
 }
 
 .footer {

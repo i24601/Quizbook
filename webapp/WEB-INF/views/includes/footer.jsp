@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<div id="footer_Top"></div>
+	
+<div class="footer_Top_bg">
+	<div id="footer_Top"></div>
+</div>
 
 <div id="divider"></div>
 
