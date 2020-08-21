@@ -19,10 +19,12 @@
 	href="${pageContext.request.contextPath}/assets/css/include/hnf.css"
 	rel="stylesheet" type="text/css">
 
+
 <link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
 	rel="stylesheet" />
 
+	
 <link
 	href="${pageContext.request.contextPath}/assets/css/study/main.css"
 	rel="stylesheet" type="text/css">
@@ -53,8 +55,8 @@
 					<div class="card" id="card">
 
 						<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
-						<div class="card_left card_nav fontAwsome">&#xf104</div>
-						<div class="card_left button_back card_nav fontAwsome">&#xf104</div>
+						<div class="card_left card_nav fontAwsome5">&#xf104</div>
+						<div class="card_left button_back card_nav fontAwsome5">&#xf104</div>
 
 						<div class="card_content">
 
@@ -93,8 +95,8 @@
 
 
 						<!-- 뒷면용 버튼 transform: rotateX(180deg)와 앞면용 버튼 transform: rotateX(0deg)있어야 뒤집었을때도 버튼이 보임-->
-						<div class="card_right card_nav fontAwsome">&#xf105</div>
-						<div class="card_right button_back card_nav fontAwsome">&#xf105</div>
+						<div class="card_right card_nav fontAwsome5">&#xf105</div>
+						<div class="card_right button_back card_nav fontAwsome5">&#xf105</div>
 
 					</div>
 
@@ -106,7 +108,7 @@
 					<div class="CardsList-navControl previousButton">
 						<span>
 							<button title="이전 카드" type="button" class="card_btn">
-								<span class="fontAwsome">&#xf0d9</span>
+								<span class="fontAwsome5">&#xf0d9</span>
 							</button>
 						</span>
 					</div>
@@ -123,7 +125,7 @@
 					<div class="CardsList-navControl nextButton">
 						<span>
 							<button title="다음 카드" type="button" class="card_btn">
-								<span class="fontAwsome">&#xf0da</span>
+								<span class="fontAwsome5">&#xf0da</span>
 							</button>
 						</span>
 					</div>
@@ -134,38 +136,40 @@
 			<!-- study_area 끝  -->
 
 			<div id="user_wrap">
-				<div class="fontAwsome">
+				<div class="fontAwsome5">
 					<a href="#" id="icon_home">&#xf015</a>
 				</div>
 				<div id="study_user">
-					<div id="user_data">
-						<div id="logo">
-							<img
-								src="${pageContext.request.contextPath}/assets/images/01.메인.png"
-								id="logoImg" />
+					<div id="addShadow">
+						<div id="user_data">
+							<div id="logo">
+								<img
+									src="${pageContext.request.contextPath}/assets/images/01.메인.png"
+									id="logoImg" />
+							</div>
+							<div id="user_data_nick">크롱</div>
 						</div>
-						<div id="user_data_nick">크롱</div>
+						<div id="followNo">
+							<div id="following">
+								<a href="#">팔로잉 1</a>
+							</div>
+							<div id="follow_divider">|</div>
+							<div id="follower">
+								<a href="#">팔로워 10000</a>
+							</div>
+						</div>
+						<div id="heart_wrap">
+							<div class="fontAwsome5" id="heart">
+								<a href="#" id="aHeart">&#xf004</a>
+							</div>
+						</div>
+						<ul id="study_user_nav" class="fontAwsome5">
+							<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
+							<li><a href="#"><span>&#xF24d</span> 낱말 카드</a></li>
+							<li><a href="#"><span>&#xf044</span> 테스트</a></li>
+							<li><a href="#"><span>&#xf439</span> 게임</a></li>
+						</ul>
 					</div>
-					<div id="followNo">
-						<div id="following">
-							<a href="#">팔로잉 1</a>
-						</div>
-						<div id="follow_divider">|</div>
-						<div id="follower">
-							<a href="#">팔로워 10</a>
-						</div>
-					</div>
-					<div id="heart_wrap">
-						<div class="fontAwsome" id="heart">
-							<a href="#" id="aHeart">&#xf004</a>
-						</div>
-					</div>
-					<ul id="study_user_nav" class="fontAwsome">
-						<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
-						<li><a href="#"><span>&#xF24d</span> 낱말 카드</a></li>
-						<li><a href="#"><span>&#xf044</span> 테스트</a></li>
-						<li><a href="#"><span>&#xf11b</span> 게임</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -317,7 +321,7 @@
 							setTimeout(
 									function() {
 										$('.front').text('previous_front');
-										$('.back').text('previous_back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+										$('.back').html('<img src="${pageContext.request.contextPath}/assets/images/black_test.jpg"/>');
 										}, 1000);
 
 							setTimeout(function() {

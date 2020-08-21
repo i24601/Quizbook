@@ -8,6 +8,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	list-style-type: none;
 }
 
+
 #body {
 	position: relative;
 	width: 1400px;
@@ -43,8 +44,15 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 #study_user {
 	height: 400px;
 	box-shadow: 4px 4px 4px #EEEEEE;
+}
+
+#addShadow {
+	height: 400px;
+	box-shadow: -4px -4px 4px #EEEEEE;
 	text-align:center
 }
+
+
 
 .CardsList-navControl {
 	bottom: 0;
@@ -94,9 +102,11 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	border-bottom: 2px solid #F1C40F;
 }
 
-.fontAwsome {
-	font-family: "Arial", FontAwesome;
+.fontAwsome5 {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 600;
 }
+
 /* 애니메이션 시작 */
 div.card_wrap {
 	width: 500px;
@@ -207,7 +217,7 @@ div.card {
 }
 
 #icon_home {
-	font-size: 30px;
+	font-size: 25px;
 	color: #4EA3DC;
 	text-decoration: none;
 }
@@ -217,7 +227,7 @@ div.card {
 }
 
 #followNo {
-	width: 70%;
+	width: 90%;
 	height:20px;
 	text-align:center;
 	display:inline-block;
@@ -325,7 +335,7 @@ div.card {
 }
 .card:hover .card_nav {
 	
-	/* 백드라운드 */
+	/* 백그라운드 */
 	background-color: rgba(207, 207, 207, 0.1);
 
 	/* 폰트 */

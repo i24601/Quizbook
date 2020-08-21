@@ -21,10 +21,5 @@ public class MainController {
 		System.out.println("키워드 : "+keyword);
 		return "main/index";
 	}
-	
-	@RequestMapping(value="/study", method={RequestMethod.GET, RequestMethod.POST})
-	public String study(){
-		return "study/main";
-	}
 
 }
