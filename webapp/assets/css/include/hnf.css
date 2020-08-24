@@ -22,6 +22,11 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 /* 고정형 헤더 */
 
 /* 헤더 */
+#header-wrap {
+	position:relative;
+	z-index:1;
+}
+
 #header {
 	height: 70px;
 }
@@ -157,7 +162,7 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 #login-aLinkHeader:hover {
 	background-color: #4257B2;
 }
-
+ 
 /* 고정형  푸터*/
 
 #footer_Top {

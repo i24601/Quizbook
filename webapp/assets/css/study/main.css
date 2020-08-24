@@ -16,26 +16,27 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	margin: 0 auto;
 }
 
-#study_nav {
+/* #study_nav {
 	margin-top: 50px; 
+	margin-left: 55px;
 	width : 182px;
 	height: 600px;
-	margin-left: 55px;
 	float: left;
 	border: 2px solid black;
-}
+} */
 
 #study_wrap {
 	margin-top: 50px;
-	width: 690px;
+	margin-left: 297px;
+	width: 695px;
 	height: 500px;
 	border-bottom: 2px solid #c3c3c3;
-	float: left;
-	margin-left: 85px;
+	/* float: left; */
+	display:inline-block;
 }
 
 #study_title {
-	height: 70px;
+	height: 50px;
 	width: 100%;
 	font-size: 25px;
 	font-weight:bold;
@@ -79,7 +80,6 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 #study_user_nav {
 	font-size: 16px;
 	color:#515151;
-	width: 80%;
 	margin-left: 10%;
 	clear: both;
 	text-align:left;
@@ -206,18 +206,16 @@ div.card {
 }
 
 #user_wrap {
-	/* width: 195px;
-	height: 500px; */
-	
+	margin-top:24px;
+	margin-left: 25px;
 	width: 170px;
 	height: 350px;
 	
-	margin-left: 20px;
 	float: left;
 }
 
 #icon_home {
-	font-size: 25px;
+	font-size: 20px;
 	color: #4EA3DC;
 	text-decoration: none;
 }

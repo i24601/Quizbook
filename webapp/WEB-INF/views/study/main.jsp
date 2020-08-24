@@ -37,8 +37,14 @@
 	<div id="body">
 
 
-		<div id="study_nav">nav 넣을자리</div>
-
+<!-- 		<div id="study_nav">
+ -->		
+		
+	<c:import url="/WEB-INF/views/includes/sidebar.jsp"></c:import>
+		
+		
+<!-- 		</div>
+ -->
 		<!-- study_area, study_user, bottom line을 위한 wrap  -->
 		<div id="study_wrap">
 
