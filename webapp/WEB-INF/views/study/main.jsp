@@ -40,7 +40,7 @@
 <!-- 		<div id="study_nav">
  -->		
 		
-	<c:import url="/WEB-INF/views/includes/sidebar.jsp"></c:import>
+	<%-- <c:import url="/WEB-INF/views/includes/sidebar.jsp"></c:import> --%>
 		
 		
 <!-- 		</div>
@@ -72,7 +72,7 @@
 
 									<img
 										src="${pageContext.request.contextPath}/assets/images/corn.jpg"
-										class="img" />
+										class="imgWithText" />
 
 									<div class="text">옥수수</div>
 
@@ -83,7 +83,7 @@
 
 									<img
 										src="${pageContext.request.contextPath}/assets/images/rabbit.jpg"
-										class="img" />
+										class="imgWithText" />
 
 									<div class="text">Lorem ipsum dolor sit amet, consectetur
 										adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -153,7 +153,7 @@
 									src="${pageContext.request.contextPath}/assets/images/01.메인.png"
 									id="logoImg" />
 							</div>
-							<div id="user_data_nick">크롱</div>
+							<div id="user_data_nick"><a href="#">크롱</a></div>
 						</div>
 						<div id="followNo">
 							<div id="following">
@@ -165,11 +165,11 @@
 							</div>
 						</div>
 						<div id="heart_wrap">
-							<div class="fontAwsome5" id="heart">
+							<div id="heart">
 								<a href="#" id="aHeart">&#xf004</a>
 							</div>
 						</div>
-						<ul id="study_user_nav" class="fontAwsome5">
+						<ul id="study_user_nav">
 							<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
 							<li><a href="#"><span>&#xF24d</span> 낱말 카드</a></li>
 							<li><a href="#"><span>&#xf044</span> 테스트</a></li>
@@ -195,6 +195,8 @@
 </body>
 
 <script type="text/javascript">
+
+	
 	var card_front = true;
 
 	$(".card_content")
@@ -327,7 +329,7 @@
 							setTimeout(
 									function() {
 										$('.front').text('previous_front');
-										$('.back').html('<img src="${pageContext.request.contextPath}/assets/images/black_test.jpg"/>');
+										$('.back').html('<img class="imgOnly" src="${pageContext.request.contextPath}/assets/images/black_test.jpg"/>');
 										}, 1000);
 
 							setTimeout(function() {
