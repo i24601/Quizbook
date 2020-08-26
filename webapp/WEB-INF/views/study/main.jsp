@@ -37,14 +37,8 @@
 	<div id="body">
 
 
-<!-- 		<div id="study_nav">
- -->		
+	<c:import url="/WEB-INF/views/includes/sidebar.jsp"></c:import>
 		
-	<%-- <c:import url="/WEB-INF/views/includes/sidebar.jsp"></c:import> --%>
-		
-		
-<!-- 		</div>
- -->
 		<!-- study_area, study_user, bottom line을 위한 wrap  -->
 		<div id="study_wrap">
 
@@ -169,7 +163,7 @@
 								<a href="#" id="aHeart">&#xf004</a>
 							</div>
 						</div>
-						<ul id="study_user_nav">
+						<ul id="study_user_nav" class="fontAwsome5">
 							<li><a href="#"><span>&#xf00c</span> 학습하기</a></li>
 							<li><a href="#"><span>&#xF24d</span> 낱말 카드</a></li>
 							<li><a href="#"><span>&#xf044</span> 테스트</a></li>
@@ -195,15 +189,25 @@
 </body>
 
 <script type="text/javascript">
+	function rotateX(deg) {
+		$('.card').animate({
+			deg : deg
+		}, {
+			duration : 500,
+			step : function(now) {
+				/* console.log(now); */
 
+				$(".card").css({
+					transform : 'rotateX(' + now + 'deg)'
+				});
+			}
+		});
+	}
 	
 	var card_front = true;
 
-	$(".card_content")
-			.on(
-					'click',
-					function() {
-
+	$(".card_content").on('click',function() {
+		
 						console.log($('.card').css('transform'));
 
 						//1. 만약 애니메이션이 여러개 있어서 복잡하게 되면 메소드를 하나 만드는게 낫다 (split)
@@ -214,36 +218,14 @@
 						if (($('.card').css('transform')) != 'matrix3d(1, 0, 0, 0, 0, -1, 1.22465e-16, 0, 0, -1.22465e-16, -1, 0, 0, 0, 0, 1)') {
 							console.log("앞->뒤");
 
-							$('.card').animate({
-								deg : 180
-							}, {
-								duration : 500,
-								step : function(now) {
-									/* console.log(now); */
-
-									$(".card").css({
-										transform : 'rotateX(' + now + 'deg)'
-									});
-								}
-							});
+							rotateX(180);
 							card_front = false;
 						}
 
 						else {
 							console.log("뒤->앞");
 
-							$('.card').animate({
-								deg : 0
-							}, {
-								duration : 500,
-								step : function(now) {
-									/* console.log(now); */
-
-									$(".card").css({
-										transform : 'rotateX(' + now + 'deg)'
-									});
-								}
-							});
+							rotateX(0);
 							card_front = true;
 
 						}

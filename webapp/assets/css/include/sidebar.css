@@ -2,12 +2,13 @@
 
 /*폰트 적용*/
 @font-face {
-	font-family:"NotoSansKR-Regular";
-	src:url("fonts/NotoSansKR-Regular.otf");
+	font-family: "NotoSansKR-Regular";
+	src: url("fonts/NotoSansKR-Regular.otf");
 }
+
 @font-face {
-	font-family:"NotoSansKR-Bold";
-	src:url("fonts/NotoSansKR-Bold.otf");
+	font-family: "NotoSansKR-Bold";
+	src: url("fonts/NotoSansKR-Bold.otf");
 }
 
 /****************************************************************/
@@ -15,33 +16,38 @@
 /****************************************************************/
 
 /* 여백 초기화 */
-body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
-input, fieldset, legend, p, select, table, th, td, tr,
-textarea, button, form {margin: 0; padding: 0;}
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
+	legend, p, select, table, th, td, tr, textarea, button, form {
+	margin: 0;
+	padding: 0;
+}
 
-  /* =========  사이드바  ========== */
+/* =========  사이드바  ========== */
+
     .col-sidenav {
       background-color: #ffffff;
+      
       position:fixed;
+      
+      padding:70px 0px 70px 0px;
       width: 180px;
-      padding: 100px 0px 100px 0px;
       margin-left: 45px;
       margin-top: 0px;
       box-shadow:0px 0px 15px #cdcdcd ;
       display:inline-block;
-      z-index:0;
+      /* z-index는 부모를 기준으로 적용됨 자식한테 적용해봐야 소용없음 */
+      z-index:1;
     }
-    
 
    ul {
       list-style:none;
       font-family:"NotoSansKR-Regular";
       font-weight: bold;
-      font-size: 12px;
+      font-size: 13px;
     }
    
    /* ----- li 전체 적용 ----- */
-  	li a{
+  	.col-sidenav li a{
 	  	display: block;
 	  	color:#000000;
 	  	padding: 8px;
@@ -49,13 +55,13 @@ textarea, button, form {margin: 0; padding: 0;}
 	  	
 	  	}
   	
-  	    li a:hover {
+  	.col-sidenav li a:hover {
   		background-color:#FFD739;
   		color:white;
   		text-decoration:none;
   		}
   		
-  	li a:after {
+  	.col-sidenav li a:after {
         display: block;
         width: 60px;
         border-bottom: 1px solid #FCFCFC;
@@ -113,6 +119,10 @@ textarea, button, form {margin: 0; padding: 0;}
   	.on-fold {
   		margin: 0px 0px 0px 30px;
   	}
+  	
+  	#onfold-txt {
+			padding: 0px 0px 0px 40px;
+	}
 		
 	.in-fold .on-fold { 
 	width: 100%;
@@ -130,5 +140,75 @@ textarea, button, form {margin: 0; padding: 0;}
 	.material-icons {
 		vertical-align:middle;
 		color:#1ABC9C;
-		
+		font-size: 20px;
+		width:20px;
+		height:20px;
 	}
+	
+	.folder-Area {
+		font-family:"NotoSansKR-Regular";
+      	font-weight: bold;
+      	font-size: 13px;
+      	overflow:auto;
+      	height:300px;
+      	background-color:#CCCCCC;
+	}
+	
+	.folder {
+		padding:5px 0px 5px 30px;
+		text-overflow:ellipsis;
+		overflow:hidden;
+		white-space: nowrap;
+		line-height:1.5;
+		display:block; 
+	}
+	
+	.folder:hover {
+		background-color:#FFD739;
+  		color:white;
+  		text-decoration:none;
+  		cursor:pointer;
+	}
+
+.contextmenu, .contextmenu_folder {
+	display: none;
+	position: absolute;
+	width: 100px;
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+	border-radius: 5px;
+	list-style: none;
+	box-shadow: 0 15px 35px rgba(50, 50, 90, 0.1), 0 5px 15px
+		rgba(0, 0, 0, 0.07);
+	overflow: hidden;
+}
+
+.contextmenu li, .contextmenu_folder li {
+	border-left: 3px solid transparent;
+	transition: ease .2s;
+}
+
+.contextmenu li a, .contextmenu_folder li a {
+	display: block;
+	padding: 10px;
+	color: #B0BEC5;
+	text-decoration: none;
+	transition: ease .2s;
+}
+
+.contextmenu li:hover, .contextmenu_folder li:hover {
+	background: #CE93D8;
+	border-left: 3px solid #9C27B0;
+}
+
+.contextmenu li:hover a, .contextmenu_folder li:hover a {
+	color: #FFFFFF;
+}
+
+.test {
+	position:absolute;
+	width:100%;
+	height:300px;
+}
+
