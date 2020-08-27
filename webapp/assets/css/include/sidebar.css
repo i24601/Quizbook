@@ -23,152 +23,163 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 }
 
 /* =========  사이드바  ========== */
+.col-sidenav {
+	background-color: #ffffff;
+	position: fixed;
+	padding: 70px 0px 70px 0px;
+	width: 180px;
+	margin-left: 45px;
+	margin-top: 0px;
+	box-shadow: 0px 0px 15px #cdcdcd;
+	display: inline-block;
+	/* z-index는 부모를 기준으로 적용됨 자식한테 적용해봐야 소용없음 */
+	z-index: 1;
+}
 
-    .col-sidenav {
-      background-color: #ffffff;
-      
-      position:fixed;
-      
-      padding:70px 0px 70px 0px;
-      width: 180px;
-      margin-left: 45px;
-      margin-top: 0px;
-      box-shadow:0px 0px 15px #cdcdcd ;
-      display:inline-block;
-      /* z-index는 부모를 기준으로 적용됨 자식한테 적용해봐야 소용없음 */
-      z-index:1;
-    }
+ul {
+	list-style: none;
+	font-family: "NotoSansKR-Regular";
+	font-weight: bold;
+	font-size: 13px;
+}
 
-   ul {
-      list-style:none;
-      font-family:"NotoSansKR-Regular";
-      font-weight: bold;
-      font-size: 13px;
-    }
-   
-   /* ----- li 전체 적용 ----- */
-  	.col-sidenav li a{
-	  	display: block;
-	  	color:#000000;
-	  	padding: 8px;
-	  	text-decoration: none;
-	  	
-	  	}
-  	
-  	.col-sidenav li a:hover {
-  		background-color:#FFD739;
-  		color:white;
-  		text-decoration:none;
-  		}
-  		
-  	.col-sidenav li a:after {
-        display: block;
-        width: 60px;
-        border-bottom: 1px solid #FCFCFC;
-        margin: 20px 0px;
-         text-decoration:none;		        
-	}
-  		
-  	/* ------- 이미지 -------- */	
-  	.img-block {
-  		width:14px;
-  		height:14px;
-  		margin-left:10px;
-  		margin-top:-3px;
-  	}
-  	.fold-block {
-  		width: 14px;
-  		height: 12px;
-  		margin-left:10px;
-  		margin-top:-3px;
-  	}
-  	
-  	
-	/* ------- 선 -------- */	
-	hr {
-        color:#cdcdcd;border:0.5px solid #FCFCFC;
-	}
-		     
-  	/* --------------text 간격 조정 ---------------*/
-	#home-txt {
-  		margin: 0px 0px 0px 20px;
-  	}
-  	#rec-txt {
-  		margin: 0px 0px 0px 17px;
-  	}
-  	#fol-txt {
-  		margin: 0px 0px 0px 20px;
-  	}
-  	#set-txt {
-  		margin: 0px 0px 0px 20px;
-  	}
-	#fold-txt {
-  		margin: 0px 0px 0px 20px;
-  	}  	
-  	#mypage-txt {
-  		margin: 0px 0px 0px 20px;
-  	}
-  	#setting-txt{
-  		margin: 0px 0px 0px 20px;
-  	}
-  	#f1-txt {
-  		padding: 0px 0px 0px 0px;
-  	}
-  	
-  	/* ---------펼치기 ------------*/
-  	.on-fold {
-  		margin: 0px 0px 0px 30px;
-  	}
-  	
-  	#onfold-txt {
-			padding: 0px 0px 0px 40px;
-	}
-		
-	.in-fold .on-fold { 
+/* ----- li 전체 적용 ----- */
+.col-sidenav li a {
+	display: block;
+	color: #000000;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.col-sidenav li a:hover {
+	background-color: #FFD739;
+	color: white;
+	text-decoration: none;
+}
+
+.col-sidenav li a:after {
+	display: block;
+	width: 60px;
+	border-bottom: 1px solid #FCFCFC;
+	margin: 20px 0px;
+	text-decoration: none;
+}
+
+/* ------- 이미지 -------- */
+.img-block {
+	width: 14px;
+	height: 14px;
+	margin-left: 10px;
+	margin-top: -3px;
+}
+
+.fold-block {
+	width: 14px;
+	height: 12px;
+	margin-left: 10px;
+	margin-top: -3px;
+}
+
+/* ------- 선 -------- */
+hr {
+	color: #cdcdcd;
+	border: 0.5px solid #FCFCFC;
+}
+
+/* --------------text 간격 조정 ---------------*/
+#home-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#rec-txt {
+	margin: 0px 0px 0px 17px;
+}
+
+#fol-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#set-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#fold-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#mypage-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#setting-txt {
+	margin: 0px 0px 0px 20px;
+}
+
+#f1-txt {
+	padding: 0px 0px 0px 0px;
+}
+
+/* ---------펼치기 ------------*/
+.on-fold {
+	margin: 0px 0px 0px 30px;
+}
+
+#onfold-txt {
+	padding: 0px 0px 0px 40px;
+}
+
+.in-fold .on-fold {
 	width: 100%;
-    border-bottom: 1px solid #cfa608;
-    background: white;
-    display: none; 
-    }
-    
-	.in-fold ul { 
+	border-bottom: 1px solid #cfa608;
 	background: white;
-	text-decoration:none;
-	}
-	.in-fold ul li { text-indent: 20px;}
+	display: none;
+}
+
+.in-fold ul {
+	background: white;
+	text-decoration: none;
+}
+
+.in-fold ul li {
+	text-indent: 20px;
+}
+
+.material-icons {
+	vertical-align: middle;
+	color: #1ABC9C;
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+.folder-Area {
+	font-family: "NotoSansKR-Regular";
+	font-weight: bold;
+	font-size: 13px;
+	overflow: auto;
+	height: 300px;
+	background-color: #CCCCCC;
+	padding-bottom: 32px;
+}
+
+.folder {
+	width:100%;
+	text-overflow: ellipsis;
+	/* overflow: hidden; */
+	/* white-space: nowrap; */
+	display: flex;
+ 	align-items: center;
+	vertical-align:middle;
 	
-	.material-icons {
-		vertical-align:middle;
-		color:#1ABC9C;
-		font-size: 20px;
-		width:20px;
-		height:20px;
-	}
-	
-	.folder-Area {
-		font-family:"NotoSansKR-Regular";
-      	font-weight: bold;
-      	font-size: 13px;
-      	overflow:auto;
-      	height:300px;
-      	background-color:#CCCCCC;
-	}
-	
-	.folder {
-		padding:5px 0px 5px 30px;
-		text-overflow:ellipsis;
-		overflow:hidden;
-		white-space: nowrap;
-		line-height:1.5;
-		display:block; 
-	}
-	
-	.folder:hover {
-		background-color:#FFD739;
-  		color:white;
-  		text-decoration:none;
-  		cursor:pointer;
-	}
+	line-height: 3;
+}
+
+.folder:hover {
+	background-color: #FFD739;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
 
 .contextmenu, .contextmenu_folder {
 	display: none;
@@ -206,9 +217,16 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
 	color: #FFFFFF;
 }
 
-.test {
-	position:absolute;
-	width:100%;
-	height:300px;
+
+.folder-Area::-webkit-scrollbar {
+	width: 10px;
+}
+
+.folder-Area::-webkit-scrollbar-thumb {
+	background-color: #2f3542;
+}
+
+.folder-Area::-webkit-scrollbar-track {
+	background-color: grey;
 }
 

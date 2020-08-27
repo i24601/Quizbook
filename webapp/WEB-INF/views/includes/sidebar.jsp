@@ -41,41 +41,21 @@
 				src="${pageContext.request.contextPath}/assets/images/05.사이드바/folder2.png"
 				alt="folder"><span id="fold-txt">폴더</span></a></li>
 	</ul>
-
-
-	<div class="folder-Area">
 	
-		<div class="folder">
-				<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>	
-		<div class="folder">
-				<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-				<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>	
-		<div class="folder">
-				<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-	
-		<div class="test">
-			<ul class="contextmenu">
-				<li><a href="#">추가</a></li>
-			</ul>
-	
-			<ul class="contextmenu_folder">
-				<li><a href="#">수정</a></li>
-				<li><a href="#">삭제</a></li>
-				<li><a href="#">추가</a></li>
-			</ul>
-		</div>
+	<ul class="contextmenu">
+			<li><a href="#">추가</a></li>
+		</ul>
 		
-		<!-- 그룹번호는 상위폴더의 그룹번호, 상위폴더가 없을경우 폴더번호
-				 depth는 상위폴더의 depth+1, 상위폴더가 없을경우 0
-				 ino는 폴더번호 -->
-
+		<ul class="contextmenu_folder">
+			<li><a href="#">수정</a></li>
+			<li><a href="#">삭제</a></li>
+			<li><a href="#">추가</a></li>
+		</ul>
+	
+	<div class="folder-Area">
+		
 		<c:forEach items="${fList}" var="vo">
-			
+
 			<div>
 				<c:if test="${vo.depth ne 0}">
 					<c:forEach begin="1" end="${vo.depth}">&nbsp;</c:forEach>
@@ -86,10 +66,63 @@
 				</div>
 			</div>
 		</c:forEach>
+				
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		<div class="folder">
+			<i class="material-icons">keyboard_arrow_right</i>테스트
+		</div>
+		
+		<!-- 팝업 -->
+		
+		<!-- ! 팝업 -->
 
-		
-		
-		
+		<!-- 그룹번호는 상위폴더의 그룹번호, 상위폴더가 없을경우 폴더번호
+				 depth는 상위폴더의 depth+1, 상위폴더가 없을경우 0
+				 ino는 폴더번호 -->
 
 	</div>
 
@@ -117,33 +150,41 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 				<h4 class="modal-title">이미지등록</h4>
 			</div>
-			
-			<form method="post" action="${pageContext.request.contextPath}/gallery/upload" enctype="multipart/form-data">
+
+			<form method="post"
+				action="${pageContext.request.contextPath}/gallery/upload"
+				enctype="multipart/form-data">
 				<div class="modal-body">
 					<div class="form-group">
-						<label class="form-text">글작성</label>
-						<input id="addModalContent" type="text" name="content" value="" >
+						<label class="form-text">글작성</label> <input id="addModalContent"
+							type="text" name="content" value="">
 					</div>
 					<div class="form-group">
-						<label class="form-text">이미지선택</label>
-						<input id="file" type="file" name="file" value="" >
+						<label class="form-text">이미지선택</label> <input id="file"
+							type="file" name="file" value="">
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn" id="btnUpload">등록</button>
 				</div>
 			</form>
-			
-			
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-	
-	
-	
+
+
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
 <!-- 
 <script>
 	$(".nav-mid li").click(function() {
@@ -160,26 +201,31 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+
 		//Show contextmenu:
 		/* $(".folder-Area, .folder").contextmenu(function(e) { */
 		$(".folder-Area").on("contextmenu", ".folder", function(e) {
 			console.log($(this));
 			event.preventDefault();
 			//Get window size:
-				
 			$(".contextmenu_folder").hide();
-			$(".contextmenu").hide();		
-				
+			$(".contextmenu").hide();
+
 			console.log($(this).attr("class"));
 			//Get pointer position:
 			var posX = e.offsetX;
 			var posY = e.offsetY;
 			//Get contextmenu size:
 			//Prevent page overflow:
-				
+
+			console.log($(this).position().top);
+			
+			/* 마우스좌표 */
 			posLeft = posX + "px";
-			posTop = posY + "px";
+			posTop = posY + $(this).position().top + "px";
+			
+			/* 마우스좌표 아니라 부모기준 element 좌표 */
+			console.log($(this).position());
 			
 			console.log(posX);
 			console.log(posY);
@@ -192,36 +238,33 @@
 			//Prevent browser default contextmenu.
 			return false;
 		});
-		
+
 		//Hide contextmenu:
 		$(document).click(function() {
 			$(".contextmenu_folder").hide();
 			$(".contextmenu").hide();
 		});
-		
-		
+
 	});
-	
-	
+
 	$(".folder-Area").on("contextmenu", function(e) {
-		console.log($(this));
 		console.log($(this));
 		event.preventDefault();
 		//Get window size:
-		
+
 		$(".contextmenu_folder").hide();
 		$(".contextmenu").hide();
-			
+
 		console.log($(this).attr("class"));
 		//Get pointer position:
 		var posX = e.offsetX;
 		var posY = e.offsetY;
 		//Get contextmenu size:
 		//Prevent page overflow:
-			
+
 		posLeft = posX + "px";
-		posTop = posY + "px";
-		
+		posTop = posY + $(this).position().top + "px";
+
 		console.log(posX);
 		console.log(posY);
 
@@ -233,28 +276,28 @@
 		//Prevent browser default contextmenu.
 		return false;
 	});
-	
-
 </script>
 
 <script type="text/javascript">
 	$(".contextmenu li").on("click", function(event) {
-		
+
 		$('#addModal').modal("show");
-		
+
 		console.log($(this).parent());
 		event.preventDefault();
 
 		$.ajax({
 			url : "${pageContext.request.contextPath }/api/side/folderNew",
 			type : "post",
-			
+
 			/* json형태로 보내지 않을것 */
 			/* contentType : "application/json", */
 
 			/* data : {userId : "${authUser.id}"}, */
-			data : {user_id : "1"},
-			
+			data : {
+				user_id : "1"
+			},
+
 			/* 데이터 받음  */
 			dataType : "json",
 			success : function(fVo) {
