@@ -2,6 +2,7 @@ package com.javaex.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,10 +18,12 @@ public class ApiSidebarController {
 	private SideService sideService;
 	
 	@ResponseBody
-	@RequestMapping(value="/folderNew")
-	public FolderVo newFolder(@RequestParam String user_id) {
-		System.out.println("받은데이터"+user_id);
-		return sideService.newByUserId(user_id);
+	@RequestMapping(value="/folderAddFolder")
+	public FolderVo addFolder(@RequestBody FolderVo fVo) {
+		System.out.println("받은데이터"+fVo.toString());
+		//session 여기서 받는게 안전 일단 테스트
+		fVo.setUser_id("test");
+		return sideService.newFolder(fVo);
 	}
 	
 }

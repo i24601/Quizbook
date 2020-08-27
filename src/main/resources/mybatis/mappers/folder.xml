@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="folder">
+	
+	
+	<insert id="insert" parameterType="folderVo">
+		<!-- selectKey no가 folderVo setNo를 통해 알아서 들어감 -->
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select seq_folder_no.nextval from dual
+		</selectKey>
+		<![CDATA[
+			INSERT INTO folder
+			VALUES (
+					#{no}, 
+			        #{name}, 
+			        #{user_id}, 
+			        #{group_no}, 
+			        #{order_no}, 
+			        #{depth})
+		]]>
+	</insert>
+	
+	<insert id="insertNew" parameterType="folderVo">
+		<!-- selectKey no가 folderVo setNo를 통해 알아서 들어감 -->
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select seq_folder_no.nextval from dual
+		</selectKey>
+		<![CDATA[
+			INSERT INTO folder
+			VALUES (
+					#{no}, 
+			        #{name}, 
+			        #{user_id}, 
+			        #{no}, 
+			        #{order_no}, 
+			        #{depth})
+		]]>
+	</insert>
+	
+	<select id="selectByNo" parameterType="int"
+		resultType="folderVo">
+		<![CDATA[
+			select folderno as no,
+				   name,
+				   user_id,
+				   group_no,
+				   order_no,
+				   depth
+			from folder
+			where folderno = #{no}
+		]]>
+	</select>
+	
+	
+	<update id="updateOrderNoUp" parameterType="folderVo">
+		<![CDATA[
+			update folder
+
+			set order_no = order_no + 1			
+			      		
+			where group_no = #{group_no} and
+			order_no >= #{order_no}
+		]]>
+	</update>
+	
+</mapper>

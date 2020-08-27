@@ -41,19 +41,19 @@
 				src="${pageContext.request.contextPath}/assets/images/05.사이드바/folder2.png"
 				alt="folder"><span id="fold-txt">폴더</span></a></li>
 	</ul>
-	
+
 	<ul class="contextmenu">
-			<li><a href="#">추가</a></li>
-		</ul>
-		
-		<ul class="contextmenu_folder">
-			<li><a href="#">수정</a></li>
-			<li><a href="#">삭제</a></li>
-			<li><a href="#">추가</a></li>
-		</ul>
-	
+		<li class="contextmenu_add"><a href="#">추가</a></li>
+	</ul>
+
+	<ul class="contextmenu_folder">
+		<li class="contextmenu_add"><a href="#">추가</a></li>
+		<li class="contextmenu_edit"><a href="#">수정</a></li>
+		<li class="contextmenu_delete"><a href="#">삭제</a></li>
+	</ul>
+
 	<div class="folder-Area">
-		
+
 		<c:forEach items="${fList}" var="vo">
 
 			<div>
@@ -66,58 +66,13 @@
 				</div>
 			</div>
 		</c:forEach>
-				
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
+
+		<div class="folder" data-group_no="1" data-order_no="1" data-depth="0" data-no="1">
+			<i class="material-icons">keyboard_arrow_right</i>회식합시다
 		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		<div class="folder">
-			<i class="material-icons">keyboard_arrow_right</i>테스트
-		</div>
-		
+
 		<!-- 팝업 -->
-		
+
 		<!-- ! 팝업 -->
 
 		<!-- 그룹번호는 상위폴더의 그룹번호, 상위폴더가 없을경우 폴더번호
@@ -150,28 +105,17 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title">이미지등록</h4>
+				<h4 class="modal-title">폴더생성</h4>
 			</div>
 
-			<form method="post"
-				action="${pageContext.request.contextPath}/gallery/upload"
-				enctype="multipart/form-data">
+			<form>
 				<div class="modal-body">
 					<div class="form-group">
-						<label class="form-text">글작성</label> <input id="addModalContent"
+						<label class="form-text">폴더명 :</label> <input id="addModalContent"
 							type="text" name="content" value="">
 					</div>
-					<div class="form-group">
-						<label class="form-text">이미지선택</label> <input id="file"
-							type="file" name="file" value="">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn" id="btnUpload">등록</button>
+					<button type="submit" class="btn" id="btn_newFolder">등록</button>
+					
 				</div>
 			</form>
 
@@ -183,29 +127,24 @@
 </div>
 <!-- /.modal -->
 
-
-
-<!-- 
-<script>
-	$(".nav-mid li").click(function() {
-		console.log("슬라이드 실행");
-		var $this = $(this);
-		if ($this.hasClass("fold")) {
-			$this.children().slideUp();
-		} else {
-			$this.slideDown();
-		}
-	});
-</script> -->
-
-
 <script type="text/javascript">
+
+	var crtFolder;
+
+	
+	
 	$(document).ready(function() {
 
 		//Show contextmenu:
 		/* $(".folder-Area, .folder").contextmenu(function(e) { */
 		$(".folder-Area").on("contextmenu", ".folder", function(e) {
 			console.log($(this));
+			
+			crtFolder = $(this);
+			
+		
+			
+			
 			event.preventDefault();
 			//Get window size:
 			$(".contextmenu_folder").hide();
@@ -279,29 +218,57 @@
 </script>
 
 <script type="text/javascript">
-	$(".contextmenu li").on("click", function(event) {
+	$(".contextmenu_add").on("click", function(event) {
 
 		$('#addModal').modal("show");
 
-		console.log($(this).parent());
+	});
+</script>
+
+
+<script type="text/javascript">
+	$("#btn_newFolder").on("click", function(event) {
 		event.preventDefault();
 
+		$('#addModal').modal("hide");
+		
+		
+		
+		/* 루트폴더 */
+		
+		if(typeof crtFolder == 'undefined') {
+			folderVo ={
+					name: $("#addModalContent").val()
+				}
+		}
+		
+		else {			
+		folderVo ={
+				no: crtFolder.data("no"),
+				name: $("#addModalContent").val(),
+				group_no: crtFolder.data("group_no"),
+				order_no: crtFolder.data("order_no"),
+				depth: crtFolder.data("depth")
+			}
+		}
+		
+		
+		
+		$("#addModalContent").val("");
+		
 		$.ajax({
-			url : "${pageContext.request.contextPath }/api/side/folderNew",
+			url : "${pageContext.request.contextPath }/api/side/folderAddFolder",
 			type : "post",
 
-			/* json형태로 보내지 않을것 */
-			/* contentType : "application/json", */
-
-			/* data : {userId : "${authUser.id}"}, */
-			data : {
-				user_id : "1"
-			},
+			contentType : "application/json",
+			data : JSON.stringify(folderVo),
+				
 
 			/* 데이터 받음  */
 			dataType : "json",
 			success : function(fVo) {
-				addFolder(fVo, "down");
+				console.log('json 수신')
+				console.log(fVo);
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);

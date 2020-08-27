@@ -12,20 +12,32 @@ public class SideService {
 	@Autowired
 	private FolderDao folderDao;
 	
-	public FolderVo newByUserId(String user_id) {
-		System.out.println("SideService:New");
-		FolderVo fVo = new FolderVo();
-		fVo.setUser_id(user_id);
-		fVo.setDepth(0);
-		fVo.setOrder_no(1);
+	public FolderVo newFolder(FolderVo fVo) {
+		System.out.println("SideService:addFolder");
 		
-		int no = FolderDao.selectNoBefore();
-		fVo.setNo(no);
+		folderDao.updateOrderNoUp(fVo);
+		fVo.setOrder_no(fVo.getOrder_no()+1);
 		
-		FolderDao.insertFolder(fVo);
-		System.out.println(fVo.toString());
+		/* select key가 대체해줌
+		 * int no = folderDao.getNoBefore(); fVo.setNo(no);
+		 */
 		
-		return getFolderByNo(key);
+		
+		if(fVo.getNo()==0) {
+			folderDao.newInsertFolder(fVo);
+		}
+		
+		else {
+			fVo.setDepth(fVo.getDepth()+1);
+			
+			//no X
+			System.out.println("no"+fVo.getNo());
+			folderDao.insertFolder(fVo);
+			System.out.println("no"+fVo.getNo());
+			//fVo no			
+		}
+		
+		return folderDao.getFolderVoByNo(fVo.getNo());
 
 	}
 

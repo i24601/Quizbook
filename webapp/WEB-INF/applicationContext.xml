@@ -29,7 +29,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	    	
 	    	<!-- ip, db_user, db_password -->
 	        <property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe" />
-	        <property name="user" value="quizebook" />
+	        <property name="user" value="quizbook" />
 	        <property name="password" value="quizbook" />
 	        <property name="connectionCachingEnabled" value="true" />
 	        <qualifier value="main-db" />
