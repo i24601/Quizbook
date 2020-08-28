@@ -17,7 +17,8 @@
 			        #{user_id}, 
 			        #{group_no}, 
 			        #{order_no}, 
-			        #{depth})
+			        #{depth},
+			        #{p_no})
 		]]>
 	</insert>
 	
@@ -34,7 +35,8 @@
 			        #{user_id}, 
 			        #{no}, 
 			        #{order_no}, 
-			        #{depth})
+			        #{depth},
+			        #{p_no})
 		]]>
 	</insert>
 	
@@ -84,7 +86,18 @@
 		<![CDATA[
 			delete from folder
 			where order_no >= #{order_no} and
-			group_no = #{group_no}
+			group_no = #{group_no} and
+			folderno in (
+							SELECT folderno from folder 
+							START WITH folderno = #{no} 
+                            CONNECT BY PRIOR folderno = p_no)
 		]]>
 	</delete>
+	
+	
+	
+	
+	
+	
+	
 </mapper>

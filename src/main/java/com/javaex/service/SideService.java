@@ -29,6 +29,12 @@ public class SideService {
 		
 		//추가
 		else {
+			
+			
+			fVo.setP_no(fVo.getNo());
+			
+			
+			
 			fVo.setOrder_no(fVo.getOrder_no()+1);
 			folderDao.updateOrderNoUp(fVo);
 			fVo.setDepth(fVo.getDepth()+1);

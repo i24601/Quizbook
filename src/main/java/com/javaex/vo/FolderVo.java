@@ -1,21 +1,46 @@
 package com.javaex.vo;
 
 public class FolderVo {
-	private int no, group_no, order_no, depth;
+	private int no, group_no, order_no, depth, p_no;
 	private String name, user_id;
 	public FolderVo() {
 	}
 	
 	
 
-	public FolderVo(int no, int group_no, int order_no, int depth, String name, String user_id) {
+	
+
+
+	public FolderVo(int no, int group_no, int order_no, int depth, int p_no, String name, String user_id) {
 		this.no = no;
 		this.group_no = group_no;
 		this.order_no = order_no;
 		this.depth = depth;
+		this.p_no = p_no;
 		this.name = name;
 		this.user_id = user_id;
 	}
+
+
+	
+
+
+
+	public int getP_no() {
+		return p_no;
+	}
+
+
+
+
+
+
+	public void setP_no(int p_no) {
+		this.p_no = p_no;
+	}
+
+
+
 
 
 
@@ -73,12 +98,18 @@ public class FolderVo {
 
 
 
+
+
+
 	@Override
 	public String toString() {
 		return "FolderVo [no=" + no + ", group_no=" + group_no + ", order_no=" + order_no + ", depth=" + depth
-				+ ", name=" + name + ", user_id=" + user_id + "]";
+				+ ", p_no=" + p_no + ", name=" + name + ", user_id=" + user_id + "]";
 	}
 
+
+
+	
 
 
 	
