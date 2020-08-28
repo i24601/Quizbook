@@ -39,4 +39,12 @@ public class FolderDao {
 		return sqlSession.selectOne("folder.selectByNo", no);
 	}
 	
+	public List<FolderVo> getList(){
+		return sqlSession.selectList("folder.selectList");
+	}
+	
+	public int deleteByNo(FolderVo fVo){
+		return sqlSession.delete("folder.delete", fVo);
+	}
+	
 }

@@ -55,21 +55,15 @@
 	<div class="folder-Area">
 
 		<c:forEach items="${fList}" var="vo">
-
-			<div>
+			<div class="folder" data-group_no='${vo.group_no}'
+				data-order_no='${vo.order_no}' data-depth='${vo.depth}'
+				data-no='${vo.no}'>
 				<c:if test="${vo.depth ne 0}">
-					<c:forEach begin="1" end="${vo.depth}">&nbsp;</c:forEach>
+					<c:forEach begin="1" end="${vo.depth}">&nbsp;&nbsp;</c:forEach>
 				</c:if>
-
-				<div class="folder">
-					<i class="material-icons">keyboard_arrow_right</i>${vo.name}
-				</div>
+				<i class="material-icons">keyboard_arrow_right</i>${vo.name}
 			</div>
 		</c:forEach>
-
-		<div class="folder" data-group_no="1" data-order_no="1" data-depth="0" data-no="1">
-			<i class="material-icons">keyboard_arrow_right</i>회식합시다
-		</div>
 
 		<!-- 팝업 -->
 
@@ -115,7 +109,7 @@
 							type="text" name="content" value="">
 					</div>
 					<button type="submit" class="btn" id="btn_newFolder">등록</button>
-					
+
 				</div>
 			</form>
 
@@ -128,23 +122,17 @@
 <!-- /.modal -->
 
 <script type="text/javascript">
-
 	var crtFolder;
 
-	
-	
 	$(document).ready(function() {
 
 		//Show contextmenu:
 		/* $(".folder-Area, .folder").contextmenu(function(e) { */
 		$(".folder-Area").on("contextmenu", ".folder", function(e) {
 			console.log($(this));
-			
+
 			crtFolder = $(this);
-			
-		
-			
-			
+
 			event.preventDefault();
 			//Get window size:
 			$(".contextmenu_folder").hide();
@@ -158,14 +146,14 @@
 			//Prevent page overflow:
 
 			console.log($(this).position().top);
-			
+
 			/* 마우스좌표 */
 			posLeft = posX + "px";
 			posTop = posY + $(this).position().top + "px";
-			
+
 			/* 마우스좌표 아니라 부모기준 element 좌표 */
 			console.log($(this).position());
-			
+
 			console.log(posX);
 			console.log(posY);
 
@@ -225,101 +213,133 @@
 	});
 </script>
 
-
 <script type="text/javascript">
-	$("#btn_newFolder").on("click", function(event) {
-		event.preventDefault();
+	$(".contextmenu_delete").on("click", function(event) {
 
-		$('#addModal').modal("hide");
-		
-		
-		
-		/* 루트폴더 */
-		
-		if(typeof crtFolder == 'undefined') {
-			folderVo ={
-					name: $("#addModalContent").val()
-				}
+		folderVo = {
+			no : crtFolder.data("no"),
+			group_no : crtFolder.data("group_no"),
+			order_no : crtFolder.data("order_no"),
+			depth : crtFolder.data("depth")
 		}
-		
-		else {			
-		folderVo ={
-				no: crtFolder.data("no"),
-				name: $("#addModalContent").val(),
-				group_no: crtFolder.data("group_no"),
-				order_no: crtFolder.data("order_no"),
-				depth: crtFolder.data("depth")
-			}
-		}
-		
-		
-		
-		$("#addModalContent").val("");
 		
 		$.ajax({
-			url : "${pageContext.request.contextPath }/api/side/folderAddFolder",
+			url : "${pageContext.request.contextPath }/api/side/deleteFolder",
 			type : "post",
 
 			contentType : "application/json",
 			data : JSON.stringify(folderVo),
-				
 
 			/* 데이터 받음  */
 			dataType : "json",
-			success : function(fVo) {
-				console.log('json 수신')
-				console.log(fVo);
+			success : function(result) {
+				console.log('서버 delete 성공')
+				console.log(result);
+				if(result==1){
+					deleteFolder(folderVo);
+				}
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
 			}
 		});
+
 	});
 </script>
 
-<!-- 
+
 <script type="text/javascript">
-	
-	/* 사이드바 폴더 클릭 */
-	$(document).on('click', '.folder', function(){
-		console.log("폴더클릭");
+	$("#btn_newFolder")
+			.on(
+					"click",
+					function(event) {
+						event.preventDefault();
+
+						$('#addModal').modal("hide");
+
+						/* 루트폴더 */
+
+						if (typeof crtFolder == 'undefined') {
+							folderVo = {
+								name : $("#addModalContent").val()
+							}
+						}
+
+						else {
+							folderVo = {
+								no : crtFolder.data("no"),
+								name : $("#addModalContent").val(),
+								group_no : crtFolder.data("group_no"),
+								order_no : crtFolder.data("order_no"),
+								depth : crtFolder.data("depth")
+							}
+						}
+
+						$("#addModalContent").val("");
+
+						
+						$.ajax({
+							url : "${pageContext.request.contextPath }/api/side/folderAddFolder",
+							type : "post",
+
+							contentType : "application/json",
+							data : JSON.stringify(folderVo),
+
+							/* 데이터 받음  */
+							dataType : "json",
+							success : function(fVo) {
+								console.log('json 수신')
+								console.log(fVo);
+								render(fVo);
+							},
+							error : function(XHR, status, error) {
+								console.error(status + " : " + error);
+							}
+						});
+					});
+</script>
+
+<script>
+	function render(vo) {
+		console.log("render");
+		console.log(vo);
+
+		var str = "<div class='folder' data-group_no='"+ vo.group_no +"' data-order_no='"+ vo.order_no +"' data-depth='"+ vo.depth +"' data-no='"+ vo.no +"'>";
 		
-		var $this = $(this);
-		/* 폴더번호, 그룹번호, depth번호 가져옴 */
-		console.log("폴더번호:" + $this.data("folderno"));
-		console.log("그룹번호:" + $this.data("groupno"));
-		console.log("depth번호:" + $this.data("depth"));
-		var folderno = $this.data("folderno");
-		var groupno = $this.data("groupno");
-		var depth = $this.data("depth") + 1;
-		
-		/* 아이콘모양변경 */
-		var text = $("[data-ino=" + folderno + "]").text();
-		
-		var folderStatus = $("[data-groupno=" + groupno + "][data-depth=" + depth + "]");
-		var display = $("[data-groupno=" + groupno + "][data-depth=" + depth + "]").css('display');
-		
-		/* 디스플레이가 none일때 보이고 block일때 안보이게 */
-		if(display == 'none') {
-			folderStatus.slideDown();
-		} else if(display == 'block') {
-			for(var i=depth;;i++) {
-				$("[data-groupno=" + groupno + "][data-depth=" + i + "]").slideUp();
-				if($("[data-groupno=" + groupno + "][data-depth=" + i + "]").attr('class') == null) {
-					break;
-				}
+		if(vo.depth!=0){
+			for(var i=0;i<vo.depth;i++){
+				str+='&nbsp&nbsp';				
 			}
-			
-		}
-		
-		if(text == 'keyboard_arrow_right') {
-			$("[data-ino=" + folderno + "]").text('keyboard_arrow_down');
-		} else {
-			$("[data-ino=" + folderno + "]").text('keyboard_arrow_right');
 		}
 
 		
-	});
-	
+		str+='<i class="material-icons">keyboard_arrow_right</i>';
+		str+=vo.name;
+		str+="</div>";
+		console.log(str);
+		if (vo.depth == 0) {
+			console.log("render case1");
+			$(".folder-Area").prepend(str);
+		} 
+		else {
+			console.log("render case2");
+			$("[data-group_no="+vo.group_no+"][data-order_no="+(vo.order_no-1)+"]").after(str);
+		}
+	};
 </script>
- -->
+
+
+<script>
+	function deleteFolder(vo) {
+		console.log("delete");
+		console.log(vo);
+		
+		$("[data-no]").filter(function(){
+			
+			return $(this).attr("data-order_no") >= (vo.order_no) && $(this).attr("data-group_no") == (vo.group_no); 
+		
+		}).remove();
+		
+	};
+</script>
+

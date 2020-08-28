@@ -38,6 +38,22 @@
 		]]>
 	</insert>
 	
+	
+	<select id="selectList" resultType="folderVo">
+		<![CDATA[
+			select folderno as no,
+				   name,
+				   user_id,
+				   group_no,
+				   order_no,
+				   depth
+			from folder
+			where user_id = 'test'
+			order by group_no desc, order_no asc
+		]]>
+	</select>
+	
+	
 	<select id="selectByNo" parameterType="int"
 		resultType="folderVo">
 		<![CDATA[
@@ -64,4 +80,11 @@
 		]]>
 	</update>
 	
+	<delete id="delete" parameterType="folderVo">
+		<![CDATA[
+			delete from folder
+			where order_no >= #{order_no} and
+			group_no = #{group_no}
+		]]>
+	</delete>
 </mapper>
