@@ -3,12 +3,12 @@
 /*폰트 적용*/
 @font-face {
 	font-family: "NotoSansKR-Regular";
-	src: url("fonts/NotoSansKR-Regular.otf");
+	src: url("/Quizbook/assets/fonts/nanoSansKr/NotoSansKR-Regular.otf");
 }
 
 @font-face {
 	font-family: "NotoSansKR-Bold";
-	src: url("fonts/NotoSansKR-Bold.otf");
+	src: url("/Quizbook/assets/fonts/nanoSansKr/NotoSansKR-Bold.otf");
 }
 
 /****************************************************************/

@@ -3,8 +3,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link
-	href="${pageContext.request.contextPath }/assets/css/include/sidebar.css"
-	rel="stylesheet" type="text/css">
+	href="${pageContext.request.contextPath }/assets/css/include/sidebar.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 
@@ -130,9 +129,11 @@
 		/* $(".folder-Area, .folder").contextmenu(function(e) { */
 		$(".folder-Area").on("contextmenu", ".folder", function(e) {
 			console.log($(this));
-
+			
+			folderVo={};
+			
 			crtFolder = $(this);
-
+			console.log("select"+crtFolder)
 			event.preventDefault();
 			//Get window size:
 			$(".contextmenu_folder").hide();
@@ -176,6 +177,9 @@
 
 	$(".folder-Area").on("contextmenu", function(e) {
 		console.log($(this));
+		
+		folderVo={};
+		
 		event.preventDefault();
 		//Get window size:
 
@@ -215,7 +219,8 @@
 
 <script type="text/javascript">
 	$(".contextmenu_delete").on("click", function(event) {
-
+		
+		
 		folderVo = {
 			no : crtFolder.data("no"),
 			group_no : crtFolder.data("group_no"),
@@ -235,7 +240,7 @@
 			success : function(result) {
 				console.log('서버 delete 성공')
 				console.log(result);
-				if(result==1){
+				if(result>=1){
 					deleteFolder(folderVo);
 				}
 			},
@@ -249,17 +254,16 @@
 
 
 <script type="text/javascript">
-	$("#btn_newFolder")
-			.on(
-					"click",
-					function(event) {
+	$("#btn_newFolder").on("click", function(event) {
 						event.preventDefault();
-
 						$('#addModal').modal("hide");
-
+						console.log("folder add");
+						console.log(typeof crtFolder);
+						
+						
 						/* 루트폴더 */
-
-						if (typeof crtFolder == 'undefined') {
+						
+						if (typeof crtFolder == 'undefined' || crtFolder == null) {
 							folderVo = {
 								name : $("#addModalContent").val()
 							}
@@ -296,6 +300,7 @@
 								console.error(status + " : " + error);
 							}
 						});
+						crtFolder=null;
 					});
 </script>
 
@@ -333,13 +338,12 @@
 	function deleteFolder(vo) {
 		console.log("delete");
 		console.log(vo);
-		
 		$("[data-no]").filter(function(){
 			
 			return $(this).attr("data-order_no") >= (vo.order_no) && $(this).attr("data-group_no") == (vo.group_no); 
 		
 		}).remove();
-		
+		crtFolder=null;
 	};
 </script>
 
