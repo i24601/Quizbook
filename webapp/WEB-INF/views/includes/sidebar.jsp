@@ -122,41 +122,33 @@
 
 <script type="text/javascript">
 	var crtFolder;
-
+	
 	$(document).ready(function() {
 
 		//Show contextmenu:
 		/* $(".folder-Area, .folder").contextmenu(function(e) { */
 		$(".folder-Area").on("contextmenu", ".folder", function(e) {
-			console.log($(this));
-			
+			crtFolder=null;
 			folderVo={};
 			
 			crtFolder = $(this);
-			console.log("select"+crtFolder)
 			event.preventDefault();
 			//Get window size:
 			$(".contextmenu_folder").hide();
 			$(".contextmenu").hide();
 
-			console.log($(this).attr("class"));
 			//Get pointer position:
 			var posX = e.offsetX;
 			var posY = e.offsetY;
 			//Get contextmenu size:
 			//Prevent page overflow:
 
-			console.log($(this).position().top);
 
 			/* 마우스좌표 */
 			posLeft = posX + "px";
 			posTop = posY + $(this).position().top + "px";
 
 			/* 마우스좌표 아니라 부모기준 element 좌표 */
-			console.log($(this).position());
-
-			console.log(posX);
-			console.log(posY);
 
 			//Display contextmenu:
 			$(".contextmenu_folder").css({
@@ -176,8 +168,7 @@
 	});
 
 	$(".folder-Area").on("contextmenu", function(e) {
-		console.log($(this));
-		
+		crtFolder=null;
 		folderVo={};
 		
 		event.preventDefault();
@@ -186,7 +177,6 @@
 		$(".contextmenu_folder").hide();
 		$(".contextmenu").hide();
 
-		console.log($(this).attr("class"));
 		//Get pointer position:
 		var posX = e.offsetX;
 		var posY = e.offsetY;
@@ -196,8 +186,6 @@
 		posLeft = posX + "px";
 		posTop = posY + $(this).position().top + "px";
 
-		console.log(posX);
-		console.log(posY);
 
 		//Display contextmenu:
 		$(".contextmenu").css({
@@ -238,8 +226,6 @@
 			/* 데이터 받음  */
 			dataType : "json",
 			success : function(result) {
-				console.log('서버 delete 성공')
-				console.log(result);
 				if(result>=1){
 					deleteFolder(folderVo);
 				}
@@ -257,8 +243,6 @@
 	$("#btn_newFolder").on("click", function(event) {
 						event.preventDefault();
 						$('#addModal').modal("hide");
-						console.log("folder add");
-						console.log(typeof crtFolder);
 						
 						
 						/* 루트폴더 */
@@ -278,7 +262,10 @@
 								depth : crtFolder.data("depth")
 							}
 						}
-
+						
+						console.log("folderVo전송");
+						console.log(folderVo);
+						
 						$("#addModalContent").val("");
 
 						
@@ -292,7 +279,6 @@
 							/* 데이터 받음  */
 							dataType : "json",
 							success : function(fVo) {
-								console.log('json 수신')
 								console.log(fVo);
 								render(fVo);
 							},
@@ -300,14 +286,11 @@
 								console.error(status + " : " + error);
 							}
 						});
-						crtFolder=null;
 					});
 </script>
 
 <script>
 	function render(vo) {
-		console.log("render");
-		console.log(vo);
 
 		var str = "<div class='folder' data-group_no='"+ vo.group_no +"' data-order_no='"+ vo.order_no +"' data-depth='"+ vo.depth +"' data-no='"+ vo.no +"'>";
 		
@@ -321,14 +304,11 @@
 		str+='<i class="material-icons">keyboard_arrow_right</i>';
 		str+=vo.name;
 		str+="</div>";
-		console.log(str);
 		if (vo.depth == 0) {
-			console.log("render case1");
 			$(".folder-Area").prepend(str);
 		} 
 		else {
-			console.log("render case2");
-			$("[data-group_no="+vo.group_no+"][data-order_no="+(vo.order_no-1)+"]").after(str);
+			$("[data-no="+crtFolder.data("no")+"]").after(str);
 		}
 	};
 </script>
@@ -336,8 +316,6 @@
 
 <script>
 	function deleteFolder(vo) {
-		console.log("delete");
-		console.log(vo);
 		$("[data-no]").filter(function(){
 			
 			return $(this).attr("data-order_no") >= (vo.order_no) && $(this).attr("data-group_no") == (vo.group_no); 
@@ -347,3 +325,20 @@
 	};
 </script>
 
+
+<script>
+	$(".folder-Area").on("click", ".folder", function() {
+		var groupNo = $(this).attr("data-group_no");
+		var orderNo =  $(this).attr("data-order_no");
+		
+		console.log($(".folder").filter(function(){
+			return $(this).attr("data-order_no") > $(".folder").attr("data-order_no") && $(this).attr("data-group_no") == $(".folder").attr("data-group_no");
+		}));
+		
+		$(".folder").filter(function(){
+			return $(this).attr("data-order_no") < $(".folder").attr("data-order_no") 
+			/* && $(this).attr("data-group_no") == $(".folder").attr("data-group_no") */
+			;
+		}).slideToggle();
+	});
+</script>
